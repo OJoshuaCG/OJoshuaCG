@@ -4,7 +4,7 @@ Hola chic@s! 👋
 
 Bienvenido a mi repositorio [gmail]!. Soy un estudiante, cerca de fin  
 
-![](/in.svg) Linkedin!
+![](/gm.svg) Linkedin!
 
 <img src="https://www.svgrepo.com/show/353812/google-gmail.svg" style="width:14px"/> ojoshuacg@gmail.com
 
