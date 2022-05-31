@@ -14,7 +14,7 @@ Quiero aprender a crear paginas web 🌐 y algunos frameworks de Javascript 🎆
 
 Si necesitas ayuda para resolver algun problema , algun consejo 🤝, o tienes duda 💬 en alguno de mis humildes proyectos, puedes enviarme un correo 📫
 
-![](/gm.svg) [gmail](ojoshuacg@gmail.com)
+![](/gm.svg) [gmail](mailto:ojoshuacg@gmail.com)
 
 ![](/in.svg) [linkedin](https://mx.linkedin.com/in/ojoshuacg)
 
