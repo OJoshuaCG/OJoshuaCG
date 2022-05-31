@@ -1,14 +1,12 @@
 ## Hola chic@s! 👋
 
-Bienvenido a mi repositorio 😎! 
+Soy Joshua, un estudiante 📖 cerca de finalizar mi carrera en Ingenieria en Sistemas Computacionales 💻
 
-Soy un estudiante 📖 cerca de finalizar mi carrera en Ingenieria en Sistemas Computacionales 💻
+Me gusta programar en Python 🐍, automatizar tareas ⚙ y manipular archivos 📄
 
-Me gusta programar en Python 🐍, automatizar tareas ⚙, manipular archivos 📄
+Conozco tambien Java ☕, un lenguaje muy robusto 💪
 
-Conozco tamben Java ☕, un lenguaje muy robusto 💪
-
-Cuento con conocimientos de base de datos 📚, electronica ⚡, sistemas operativos linux 🐧 y me gusta el diseño 🖌️ (mockups) de paginas web o movil 📱
+Cuento con conocimientos en base de datos 📚, electronica ⚡, sistemas operativos Linux 🐧 y me gusta el diseño 🖌️ (mockups) de paginas web o movil 📱
 
 Quiero aprender a crear paginas web 🌐 y algunos frameworks de Javascript 🎆
 
