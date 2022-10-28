@@ -1,9 +1,9 @@
-<header align="center">
+<div align="center"> 
+  <h2>Hola chic@s! 👋</h2>
+</div>
 
-## Hola chic@s! 👋
+  
 <hr>
-
-</header>
 
 Soy Joshua, un estudiante 📖 cerca de finalizar mi carrera en Ingenieria en Sistemas Computacionales 💻
 
@@ -15,9 +15,9 @@ Cuento con conocimientos en base de datos 📚, electronica ⚡, sistemas operat
 
 Quiero aprender a crear paginas web 🌐 y algunos frameworks de Javascript 🎆
 
-Si necesitas ayuda para resolver algun problema , algun consejo 🤝, o tienes duda 💬 en alguno de mis humildes proyectos, puedes enviarme un correo 📫
+Si necesitas ayuda para resolver algun problema , algun consejo 🤝, o necesitas ayuda 💬 en algun proyecto en el que te encuentres desarrollando o con algun tema, puedes enviarme un correo 📫
 
-<footer align="center">
+<div align="center">
 
 [![gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ojoshuacg@gmail.com)
 [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://mx.linkedin.com/in/ojoshuacg)
@@ -27,7 +27,7 @@ Si necesitas ayuda para resolver algun problema , algun consejo 🤝, o tienes d
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=ojoshuacg&show_icons=true&theme=onedark)
 
-</footer>
+</div>
 
 
 <!--
