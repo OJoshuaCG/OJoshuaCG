@@ -22,6 +22,7 @@ Si necesitas ayuda para resolver algun problema , algun consejo 🤝, o necesita
 [![gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ojoshuacg@gmail.com)
 [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://mx.linkedin.com/in/ojoshuacg)
 [![dev.to](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/ojoshuacg)
+[![gist.github](https://img.shields.io/badge/Gist.Github-0A0A0A?style=for-the-badge&logo=github&logoColor=white)](https://gist.github.com/OJoshuaCG/)
 
 ![Lang Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=ojoshuacg&show_icons=true&theme=onedark&layout=compact)
 
