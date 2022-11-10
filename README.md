@@ -25,9 +25,9 @@ Si necesit ayuda para resolver algun problema , algun consejo 🤝, o necesitas 
 [![gist.github](https://img.shields.io/badge/Gist.Github-0A0A0A?style=for-the-badge&logo=github&logoColor=white)](https://gist.github.com/OJoshuaCG/)
 [![gitlab](https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/OJoshuaCG)
 
-![Lang Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=OJoshuaCG&show_icons=true&theme=onedark&layout=compact)
+![Lang Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=OJoshuaCG&show_icons=true&theme=ayu-mirage&layout=compact)
 
-![Github Stats](https://github-readme-stats.vercel.app/api?username=OJoshuaCG&show_icons=true&theme=onedark)
+![Github Stats](https://github-readme-stats.vercel.app/api?username=OJoshuaCG&show_icons=true&theme=ayu-mirage)
   
 </div>
 
