@@ -15,7 +15,7 @@ Cuento con conocimientos en base de datos 📚, electronica ⚡, sistemas operat
 
 Quiero aprender a crear paginas web 🌐 y algunos frameworks de Javascript 🎆
 
-Si necesit ayuda para resolver algun problema , algun consejo 🤝, o necesitas ayuda 💬 en algun proyecto en el que te encuentres desarrollando o con algun tema, puedes enviarme un correo 📫]()
+Si necesit ayuda para resolver algun problema , algun consejo 🤝, o necesitas ayuda 💬 en algun proyecto en el que te encuentres desarrollando o con algun tema, puedes enviarme un correo 📫
 
 <div align="center">
 
@@ -25,6 +25,10 @@ Si necesit ayuda para resolver algun problema , algun consejo 🤝, o necesitas 
 [![gist.github](https://img.shields.io/badge/Gist.Github-0A0A0A?style=for-the-badge&logo=github&logoColor=white)](https://gist.github.com/OJoshuaCG/)
 [![gitlab](https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/OJoshuaCG)
 
+![Lang Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=ojoshuacg&show_icons=true&theme=onedark&layout=compact)
+
+![Github Stats](https://github-readme-stats.vercel.app/api?username=ojoshuacg&show_icons=true&theme=onedark)
+  
 </div>
 
 
