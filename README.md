@@ -26,7 +26,7 @@ Si necesitas un consejo 🤝, o ayuda 💬 en algun proyecto en el que te encuen
 
 ![Lang Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=OJoshuaCG&show_icons=true&theme=ayu-mirage&layout=compact)
 
-![Github Stats](https://github-readme-stats.vercel.app/api?username=ojoshuacg&show_icons=true&theme=onedark)
+![Github Stats](https://github-readme-stats.vercel.app/api?username=ojoshuacg&show_icons=true&theme=ayu-mirage)
 
 </div>
 
