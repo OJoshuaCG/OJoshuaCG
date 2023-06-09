@@ -1,21 +1,21 @@
-<div align="center"> 
+<div align="center">
   <h2>Hola chic@s! 👋</h2>
 </div>
 
-  
+
 <hr>
 
-Soy Joshua, un estudiante 📖 cerca de finalizar mi carrera en Ingenieria en Sistemas Computacionales 💻
+Estas en el perfil de Joshua ⚡️, un chico que acaba de terminar la carrera en Ingeniería en Sistemas Computacionales 💻
 
-Me gusta programar en Python 🐍, automatizar tareas ⚙ y manipular archivos 📄
+Le encanta programar en Python 🐍, automatizar tareas ⚙ y manipular archivos 📄
 
-Conozco tambien Java ☕, un lenguaje muy robusto 💪
+Conoce tambien Java ☕, un lenguaje muy robusto 💪. Prefiere utilizar el sistema operativo Linux 🐧, de preferencia los sabores de Arch Linux.
 
-Cuento con conocimientos en base de datos 📚, electronica ⚡, sistemas operativos Linux 🐧 y me gusta el diseño 🖌️ (mockups) de paginas web o movil 📱
+Tiene conocimientos en base de datos 📚, electronica ⚡ y le gusta el diseño 🖌️ (mockups) de paginas web o movil 📱.
 
-Quiero aprender a crear paginas web 🌐 y algunos frameworks de Javascript 🎆
+Aspira a ser un desarrollador 🔙end, cada día se esfuerza por cultivar su conocimiento 🌱, para ser compartido a los demás 🐍☕🐧🌐🛳️🐬🐘.
 
-Si necesit ayuda para resolver algun problema , algun consejo 🤝, o necesitas ayuda 💬 en algun proyecto en el que te encuentres desarrollando o con algun tema, puedes enviarme un correo 📫
+Si necesitas un consejo 🤝, o ayuda 💬 en algun proyecto en el que te encuentres desarrollando o con algun tema, puedes enviarle un correo 📫 con gusto te podra colaborar y brindar el apoyo necesario 🙌.
 
 <div align="center">
 
@@ -23,14 +23,12 @@ Si necesit ayuda para resolver algun problema , algun consejo 🤝, o necesitas 
 [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://mx.linkedin.com/in/ojoshuacg)
 [![dev.to](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/ojoshuacg)
 [![gist.github](https://img.shields.io/badge/Gist.Github-0A0A0A?style=for-the-badge&logo=github&logoColor=white)](https://gist.github.com/OJoshuaCG/)
-[![gitlab](https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/OJoshuaCG)
 
 ![Lang Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=OJoshuaCG&show_icons=true&theme=ayu-mirage&layout=compact)
 
-![Github Stats](https://github-readme-stats.vercel.app/api?username=OJoshuaCG&show_icons=true&theme=ayu-mirage)
-  
-</div>
+![Github Stats](https://github-readme-stats.vercel.app/api?username=ojoshuacg&show_icons=true&theme=onedark)
 
+</div>
 
 <!--
 **OJoshuaCG/OJoshuaCG** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -45,4 +43,7 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
+
+Badges source:
+https://github.com/Ileriayo/markdown-badges
 -->
