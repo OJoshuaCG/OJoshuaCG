@@ -5,15 +5,15 @@
 
 <hr>
 
-Estas en el perfil de Joshua ⚡️, un chico que acaba de terminar la carrera en Ingeniería en Sistemas Computacionales 💻
+Estas en el perfil de Joshua ⚡️, un chico apasionado por la programacion del lado backend, con nociones en SRE 💻
 
-Le encanta programar en Python 🐍, automatizar tareas ⚙ y manipular archivos 📄
+Le encanta programar en Python 🐍, utilizar el framework FastAPI ⚡, manipular archivos 📄 y  automatizar tareas ⚙
 
-Conoce tambien Java ☕, un lenguaje muy robusto 💪. Prefiere utilizar el sistema operativo Linux 🐧, de preferencia los sabores de Arch Linux.
+Prefiere utilizar el sistema operativo Linux 🐧, de preferencia los sabores de Arch Linux.
 
 Tiene conocimientos en base de datos 📚, electronica ⚡ y le gusta el diseño 🖌️ (mockups) de paginas web o movil 📱.
 
-Aspira a ser un desarrollador 🔙end, cada día se esfuerza por cultivar su conocimiento 🌱, para ser compartido a los demás 🐍☕🐧🌐🛳️🐬🐘.
+Cada día se esfuerza por cultivar su conocimiento 🌱, para ser compartido a los demás 🐍🐧🌐🛳️🐬🐘.
 
 Si necesitas un consejo 🤝, o ayuda 💬 en algun proyecto en el que te encuentres desarrollando o con algun tema, puedes enviarle un correo 📫 con gusto te podra colaborar y brindar el apoyo necesario 🙌.
 
