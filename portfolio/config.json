@@ -1,0 +1,361 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "author": "OJoshuaCG",
+    "date": "2026-03"
+  },
+  "global": {
+    "siteName": "Joshua CG",
+    "nav": {
+      "about": { "es": "Sobre mí", "en": "About" },
+      "tech": { "es": "Tecnologías", "en": "Tech Stack" },
+      "skills": { "es": "Habilidades", "en": "Skills" },
+      "projects": { "es": "Proyectos", "en": "Projects" },
+      "contact": { "es": "Contacto", "en": "Contact" }
+    },
+    "langToggle": {
+      "label": { "es": "EN", "en": "ES" },
+      "ariaLabel": { "es": "Cambiar a inglés", "en": "Switch to Spanish" }
+    },
+    "footer": {
+      "text": { "es": "Hecho con pasión por", "en": "Made with passion by" },
+      "rights": { "es": "Todos los derechos reservados.", "en": "All rights reserved." }
+    },
+    "backToTop": { "es": "Volver arriba", "en": "Back to top" },
+    "backToPortfolio": { "es": "Volver al portafolio", "en": "Back to portfolio" }
+  },
+  "index": {
+    "hero": {
+      "greeting": { "es": "Hola, soy", "en": "Hi, I'm" },
+      "name": "Joshua",
+      "role": { "es": "Desarrollador Backend en Python", "en": "Python Backend Developer" },
+      "subtitle": { "es": "Construyo APIs robustas, automatizo procesos y diseño arquitecturas escalables.", "en": "I build robust APIs, automate processes and design scalable architectures." },
+      "cta": { "es": "Conoce mi trabajo", "en": "See my work" },
+      "ctaLink": "#projects",
+      "portrait": "./assets/images/hero/hero-portrait.webp",
+      "bg": "./assets/images/hero/hero-bg.webp"
+    },
+    "about": {
+      "title": { "es": "Sobre mí", "en": "About me" },
+      "paragraphs": [
+        {
+          "es": "Soy un desarrollador backend apasionado por Python, con experiencia en la creación de APIs de alto rendimiento utilizando FastAPI. Me especializo en automatización de tareas, manipulación de archivos y diseño de arquitecturas limpias.",
+          "en": "I'm a backend developer passionate about Python, experienced in building high-performance APIs using FastAPI. I specialize in task automation, file manipulation and clean architecture design."
+        },
+        {
+          "es": "Tengo conocimientos sólidos en bases de datos, electrónica y diseño de interfaces (mockups). Mi entorno preferido es Linux, especialmente las distribuciones basadas en Arch Linux.",
+          "en": "I have solid knowledge in databases, electronics and interface design (mockups). My preferred environment is Linux, especially Arch Linux-based distributions."
+        },
+        {
+          "es": "Cada día me esfuerzo por aprender algo nuevo y compartir ese conocimiento con la comunidad. Si necesitas ayuda con algún proyecto, no dudes en contactarme.",
+          "en": "Every day I strive to learn something new and share that knowledge with the community. If you need help with a project, don't hesitate to reach out."
+        }
+      ]
+    },
+    "techStack": {
+      "title": { "es": "Tecnologías", "en": "Tech Stack" },
+      "categories": [
+        {
+          "name": { "es": "Lenguajes", "en": "Languages" },
+          "items": [
+            { "name": "Python", "icon": "./assets/images/tech/python.svg" },
+            { "name": "JavaScript", "icon": "./assets/images/tech/javascript.svg" },
+            { "name": "SQL", "icon": "./assets/images/tech/sql.svg" },
+            { "name": "Bash", "icon": "./assets/images/tech/bash.svg" }
+          ]
+        },
+        {
+          "name": { "es": "Frameworks y Herramientas", "en": "Frameworks & Tools" },
+          "items": [
+            { "name": "FastAPI", "icon": "./assets/images/tech/fastapi.svg" },
+            { "name": "Docker", "icon": "./assets/images/tech/docker.svg" },
+            { "name": "Git", "icon": "./assets/images/tech/git.svg" },
+            { "name": "Linux", "icon": "./assets/images/tech/linux.svg" }
+          ]
+        },
+        {
+          "name": { "es": "Bases de Datos", "en": "Databases" },
+          "items": [
+            { "name": "PostgreSQL", "icon": "./assets/images/tech/postgresql.svg" },
+            { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg" },
+            { "name": "Redis", "icon": "./assets/images/tech/redis.svg" }
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": { "es": "Habilidades", "en": "Skills" },
+      "items": [
+        {
+          "icon": "api",
+          "title": { "es": "Desarrollo de APIs", "en": "API Development" },
+          "description": {
+            "es": "Diseño e implementación de APIs RESTful con FastAPI, documentación automática y validación de datos con Pydantic.",
+            "en": "Design and implementation of RESTful APIs with FastAPI, automatic documentation and data validation with Pydantic."
+          }
+        },
+        {
+          "icon": "automation",
+          "title": { "es": "Automatización", "en": "Automation" },
+          "description": {
+            "es": "Scripts y pipelines para automatizar tareas repetitivas, procesamiento de archivos y flujos de trabajo.",
+            "en": "Scripts and pipelines to automate repetitive tasks, file processing and workflows."
+          }
+        },
+        {
+          "icon": "database",
+          "title": { "es": "Bases de Datos", "en": "Databases" },
+          "description": {
+            "es": "Modelado de datos, consultas optimizadas, migraciones y gestión de bases de datos relacionales.",
+            "en": "Data modeling, optimized queries, migrations and relational database management."
+          }
+        },
+        {
+          "icon": "devops",
+          "title": { "es": "DevOps & SRE", "en": "DevOps & SRE" },
+          "description": {
+            "es": "Contenedores con Docker, CI/CD, monitoreo y nociones de infraestructura como código.",
+            "en": "Containers with Docker, CI/CD, monitoring and infrastructure as code fundamentals."
+          }
+        }
+      ]
+    },
+    "differentiator": {
+      "title": { "es": "Lo que me diferencia", "en": "What sets me apart" },
+      "items": [
+        {
+          "es": "Enfoque en código limpio y arquitecturas mantenibles",
+          "en": "Focus on clean code and maintainable architectures"
+        },
+        {
+          "es": "Pasión genuina por compartir conocimiento con la comunidad",
+          "en": "Genuine passion for sharing knowledge with the community"
+        },
+        {
+          "es": "Capacidad de aprender rápidamente nuevas tecnologías",
+          "en": "Ability to quickly learn new technologies"
+        },
+        {
+          "es": "Experiencia combinando backend con diseño de interfaces",
+          "en": "Experience combining backend with interface design"
+        }
+      ]
+    },
+    "projects": {
+      "title": { "es": "Proyectos", "en": "Projects" },
+      "subtitle": { "es": "Landings turísticas construidas como proyectos de práctica", "en": "Tourism landing pages built as practice projects" },
+      "items": [
+        {
+          "id": "tampico",
+          "title": "Tampico",
+          "description": {
+            "es": "Landing page turística para la ciudad de Tampico, Tamaulipas. Presenta su historia, atractivos y gastronomía.",
+            "en": "Tourism landing page for the city of Tampico, Tamaulipas. Showcases its history, attractions and gastronomy."
+          },
+          "thumbnail": "./assets/images/projects/tampico-thumb.webp",
+          "link": "./tampico.html",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          "id": "veracruz",
+          "title": "Veracruz",
+          "description": {
+            "es": "Landing page turística para el puerto de Veracruz. Destaca su cultura, gastronomía y lugares emblemáticos.",
+            "en": "Tourism landing page for the port of Veracruz. Highlights its culture, gastronomy and iconic landmarks."
+          },
+          "thumbnail": "./assets/images/projects/veracruz-thumb.webp",
+          "link": "./veracruz.html",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        }
+      ]
+    },
+    "contact": {
+      "title": { "es": "Contacto", "en": "Contact" },
+      "subtitle": {
+        "es": "¿Tienes un proyecto en mente o necesitas ayuda? ¡Escríbeme!",
+        "en": "Have a project in mind or need help? Reach out!"
+      },
+      "links": [
+        { "type": "email", "label": "ojoshuacg@gmail.com", "url": "mailto:ojoshuacg@gmail.com" },
+        { "type": "linkedin", "label": "LinkedIn", "url": "https://mx.linkedin.com/in/ojoshuacg" },
+        { "type": "github", "label": "GitHub", "url": "https://github.com/OJoshuaCG" },
+        { "type": "devto", "label": "Dev.to", "url": "https://dev.to/ojoshuacg" }
+      ]
+    }
+  },
+  "tampico": {
+    "meta": {
+      "title": { "es": "Tampico - Descubre la Ciudad", "en": "Tampico - Discover the City" },
+      "description": {
+        "es": "Explora Tampico, Tamaulipas: su historia, atractivos turísticos y gastronomía.",
+        "en": "Explore Tampico, Tamaulipas: its history, tourist attractions and gastronomy."
+      }
+    },
+    "hero": {
+      "title": "Tampico",
+      "subtitle": { "es": "La Joya del Golfo de México", "en": "The Jewel of the Gulf of Mexico" },
+      "bg": "./assets/images/tampico/tampico-hero.webp"
+    },
+    "history": {
+      "title": { "es": "Historia", "en": "History" },
+      "paragraphs": [
+        {
+          "es": "Tampico es una ciudad portuaria ubicada en el sureste del estado de Tamaulipas, México. Fundada oficialmente en 1823, su historia se remonta a tiempos prehispánicos cuando los huastecos habitaban la región.",
+          "en": "Tampico is a port city located in southeastern Tamaulipas, Mexico. Officially founded in 1823, its history dates back to pre-Hispanic times when the Huastec people inhabited the region."
+        },
+        {
+          "es": "Durante el auge petrolero del siglo XX, Tampico se convirtió en una de las ciudades más importantes de México, atrayendo inversión internacional y desarrollando una rica cultura cosmopolita.",
+          "en": "During the oil boom of the 20th century, Tampico became one of Mexico's most important cities, attracting international investment and developing a rich cosmopolitan culture."
+        }
+      ]
+    },
+    "attractions": {
+      "title": { "es": "Atractivos Turísticos", "en": "Tourist Attractions" },
+      "items": [
+        {
+          "name": { "es": "Plaza de Armas", "en": "Plaza de Armas" },
+          "description": {
+            "es": "El corazón histórico de Tampico, rodeada de edificios emblemáticos de arquitectura art déco y neoclásica.",
+            "en": "The historic heart of Tampico, surrounded by iconic art deco and neoclassical buildings."
+          },
+          "image": "./assets/images/tampico/tampico-attraction-plaza.webp"
+        },
+        {
+          "name": { "es": "Playa Miramar", "en": "Miramar Beach" },
+          "description": {
+            "es": "Una de las playas más extensas del Golfo de México, ideal para disfrutar del sol y los deportes acuáticos.",
+            "en": "One of the longest beaches on the Gulf of Mexico, ideal for enjoying sun and water sports."
+          },
+          "image": "./assets/images/tampico/tampico-attraction-miramar.webp"
+        },
+        {
+          "name": { "es": "Laguna del Carpintero", "en": "Carpenter's Lagoon" },
+          "description": {
+            "es": "Laguna urbana famosa por su biodiversidad, donde se pueden observar cocodrilos y diversas especies de aves.",
+            "en": "Urban lagoon famous for its biodiversity, where you can spot crocodiles and various bird species."
+          },
+          "image": "./assets/images/tampico/tampico-attraction-laguna.webp"
+        }
+      ]
+    },
+    "gallery": {
+      "title": { "es": "Galería", "en": "Gallery" },
+      "items": [
+        { "src": "./assets/images/tampico/tampico-gallery-1.webp", "alt": { "es": "Vista panorámica de Tampico", "en": "Panoramic view of Tampico" } },
+        { "src": "./assets/images/tampico/tampico-gallery-2.webp", "alt": { "es": "Atardecer en Playa Miramar", "en": "Sunset at Miramar Beach" } },
+        { "src": "./assets/images/tampico/tampico-gallery-3.webp", "alt": { "es": "Centro histórico de Tampico", "en": "Tampico's historic downtown" } },
+        { "src": "./assets/images/tampico/tampico-gallery-4.webp", "alt": { "es": "Gastronomía tampiqueña", "en": "Tampico gastronomy" } }
+      ]
+    },
+    "promo": {
+      "title": { "es": "¡Visita Tampico!", "en": "Visit Tampico!" },
+      "text": {
+        "es": "Descubre la calidez de su gente, la riqueza de su gastronomía y la belleza de sus paisajes costeros.",
+        "en": "Discover the warmth of its people, the richness of its gastronomy and the beauty of its coastal landscapes."
+      }
+    }
+  },
+  "veracruz": {
+    "meta": {
+      "title": { "es": "Veracruz - Puerto de Historia", "en": "Veracruz - Port of History" },
+      "description": {
+        "es": "Descubre Veracruz: su cultura, gastronomía y lugares emblemáticos.",
+        "en": "Discover Veracruz: its culture, gastronomy and iconic landmarks."
+      }
+    },
+    "hero": {
+      "title": "Veracruz",
+      "subtitle": { "es": "Cuatro Veces Heroica", "en": "Four Times Heroic" },
+      "bg": "./assets/images/veracruz/veracruz-hero.webp"
+    },
+    "culture": {
+      "title": { "es": "Cultura", "en": "Culture" },
+      "paragraphs": [
+        {
+          "es": "Veracruz es cuna de la cultura jarocha, una vibrante mezcla de tradiciones indígenas, españolas y africanas. El son jarocho, con su emblemática 'La Bamba', es reconocido como Patrimonio Cultural Inmaterial.",
+          "en": "Veracruz is the birthplace of Jarocho culture, a vibrant blend of indigenous, Spanish and African traditions. Son Jarocho, with its iconic 'La Bamba', is recognized as Intangible Cultural Heritage."
+        },
+        {
+          "es": "El carnaval de Veracruz es el más importante de México y uno de los más grandes del mundo, llenando las calles de música, color y alegría cada año.",
+          "en": "The Veracruz Carnival is the most important in Mexico and one of the largest in the world, filling the streets with music, color and joy every year."
+        }
+      ],
+      "image": "./assets/images/veracruz/veracruz-culture-1.webp"
+    },
+    "gastronomy": {
+      "title": { "es": "Gastronomía", "en": "Gastronomy" },
+      "description": {
+        "es": "La cocina veracruzana es una de las más ricas y diversas de México, fusionando sabores prehispánicos con influencias españolas y caribeñas.",
+        "en": "Veracruz cuisine is one of the richest and most diverse in Mexico, fusing pre-Hispanic flavors with Spanish and Caribbean influences."
+      },
+      "items": [
+        {
+          "name": { "es": "Huachinango a la Veracruzana", "en": "Veracruz-style Red Snapper" },
+          "description": {
+            "es": "El platillo insignia: pescado fresco bañado en salsa de jitomate, aceitunas, alcaparras y chiles.",
+            "en": "The signature dish: fresh fish bathed in tomato sauce, olives, capers and chili peppers."
+          }
+        },
+        {
+          "name": { "es": "Café de Olla", "en": "Café de Olla" },
+          "description": {
+            "es": "Café preparado en olla de barro con piloncillo y canela, tradición de la región cafetalera.",
+            "en": "Coffee brewed in a clay pot with piloncillo and cinnamon, a tradition from the coffee-growing region."
+          }
+        },
+        {
+          "name": { "es": "Picadas", "en": "Picadas" },
+          "description": {
+            "es": "Tortillas gruesas pellizcadas en los bordes, bañadas en salsa y cubiertas con queso y cebolla.",
+            "en": "Thick tortillas pinched at the edges, topped with salsa, cheese and onion."
+          }
+        }
+      ]
+    },
+    "landmarks": {
+      "title": { "es": "Lugares Emblemáticos", "en": "Iconic Landmarks" },
+      "items": [
+        {
+          "name": { "es": "San Juan de Ulúa", "en": "San Juan de Ulúa" },
+          "description": {
+            "es": "Fortaleza histórica del siglo XVI que sirvió como prisión y último bastión español en México.",
+            "en": "16th-century historic fortress that served as a prison and the last Spanish stronghold in Mexico."
+          },
+          "image": "./assets/images/veracruz/veracruz-landmark-ulua.webp"
+        },
+        {
+          "name": { "es": "Malecón de Veracruz", "en": "Veracruz Boardwalk" },
+          "description": {
+            "es": "El paseo costero más emblemático, perfecto para caminar mientras disfrutas de la brisa marina y la vista al puerto.",
+            "en": "The most iconic coastal promenade, perfect for walking while enjoying the sea breeze and port views."
+          },
+          "image": "./assets/images/veracruz/veracruz-landmark-malecon.webp"
+        },
+        {
+          "name": { "es": "Zócalo de Veracruz", "en": "Veracruz Zócalo" },
+          "description": {
+            "es": "La plaza principal donde se reúnen músicos, danzantes y familias bajo los portales históricos.",
+            "en": "The main square where musicians, dancers and families gather under the historic arcades."
+          },
+          "image": "./assets/images/veracruz/veracruz-landmark-zocalo.webp"
+        }
+      ]
+    },
+    "gallery": {
+      "title": { "es": "Galería", "en": "Gallery" },
+      "items": [
+        { "src": "./assets/images/veracruz/veracruz-gallery-1.webp", "alt": { "es": "Puerto de Veracruz al atardecer", "en": "Veracruz port at sunset" } },
+        { "src": "./assets/images/veracruz/veracruz-gallery-2.webp", "alt": { "es": "Carnaval de Veracruz", "en": "Veracruz Carnival" } },
+        { "src": "./assets/images/veracruz/veracruz-gallery-3.webp", "alt": { "es": "San Juan de Ulúa", "en": "San Juan de Ulúa" } },
+        { "src": "./assets/images/veracruz/veracruz-gallery-4.webp", "alt": { "es": "Comida veracruzana", "en": "Veracruz cuisine" } }
+      ]
+    },
+    "promo": {
+      "title": { "es": "¡Descubre Veracruz!", "en": "Discover Veracruz!" },
+      "text": {
+        "es": "Vive la alegría jarocha, saborea su cocina y recorre sus calles llenas de historia y tradición.",
+        "en": "Experience the Jarocho joy, savor its cuisine and walk its streets full of history and tradition."
+      }
+    }
+  }
+}

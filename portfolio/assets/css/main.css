@@ -1,0 +1,477 @@
+/* ============================================
+   Portfolio - Custom Styles
+   Per-page color palettes via CSS variables
+   ============================================ */
+
+/* --- Color Palettes --- */
+
+/* Portfolio (index): Verde teal #38a3a5 */
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-section: #111111;
+  --color-primary: #1a4a4b;
+  --color-accent: #38a3a5;
+  --color-accent-hover: #2d8a8c;
+  --color-accent-soft: rgba(56, 163, 165, 0.3);
+  --color-accent-medium: rgba(56, 163, 165, 0.5);
+  --color-accent-subtle: rgba(56, 163, 165, 0.15);
+  --color-text: #e0e0e0;
+  --color-text-muted: #9ca3af;
+  --color-border: #1f2937;
+  --color-glass: rgba(17, 17, 17, 0.8);
+  --color-glass-border: rgba(56, 163, 165, 0.15);
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* Tampico: Dorado ambar calido - playas, golfo */
+[data-page="tampico"] {
+  --color-primary: #5c3a18;
+  --color-accent: #d4943a;
+  --color-accent-hover: #b87d2f;
+  --color-accent-soft: rgba(212, 148, 58, 0.3);
+  --color-accent-medium: rgba(212, 148, 58, 0.5);
+  --color-accent-subtle: rgba(212, 148, 58, 0.15);
+  --color-glass-border: rgba(212, 148, 58, 0.15);
+}
+
+/* Veracruz: Coral rojizo festivo - carnaval, cultura */
+[data-page="veracruz"] {
+  --color-primary: #4a1510;
+  --color-accent: #c0392b;
+  --color-accent-hover: #a33025;
+  --color-accent-soft: rgba(192, 57, 43, 0.3);
+  --color-accent-medium: rgba(192, 57, 43, 0.5);
+  --color-accent-subtle: rgba(192, 57, 43, 0.15);
+  --color-glass-border: rgba(192, 57, 43, 0.15);
+}
+
+/* --- Theme-aware utility classes --- */
+.text-theme       { color: var(--color-accent); }
+.bg-theme         { background-color: var(--color-accent); }
+.border-theme     { border-color: var(--color-accent); }
+.border-theme-soft   { border-color: var(--color-accent-soft); }
+.border-theme-medium { border-color: var(--color-accent-medium); }
+
+.btn-theme {
+  background-color: var(--color-accent);
+  color: white;
+  transition: background-color var(--transition-base);
+}
+.btn-theme:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.hover-border-theme { transition: border-color var(--transition-base); }
+.hover-border-theme:hover { border-color: var(--color-accent-medium); }
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* --- Skip to content (a11y) --- */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-weight: 600;
+  transition: top var(--transition-base);
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* --- Glassmorphism Navbar --- */
+.navbar-glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-glass-border);
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.navbar-glass.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Hero Gradient Overlay --- */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.9) 0%,
+    rgba(30, 58, 95, 0.6) 50%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+}
+
+[data-page="index"] .hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.9) 0%,
+    rgba(26, 74, 75, 0.6) 50%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+}
+
+.hero-gradient-city {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.3) 0%,
+    rgba(10, 10, 10, 0.7) 60%,
+    rgba(10, 10, 10, 1) 100%
+  );
+}
+
+/* --- Section alternating bg --- */
+.section-alt {
+  background-color: var(--color-bg-section);
+}
+
+/* --- Tech card --- */
+.tech-card {
+  background: var(--color-bg);
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.tech-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--color-accent-subtle);
+  border-color: var(--color-accent-medium);
+}
+
+.tech-card-fallback {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* --- Skill card icon --- */
+.skill-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* --- Project card --- */
+.project-card {
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--color-accent-subtle);
+  border-color: var(--color-accent);
+}
+
+/* --- Contact link --- */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.contact-link:hover {
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+/* --- Attraction / Landmark card --- */
+.attraction-card {
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.attraction-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--color-accent-subtle);
+}
+
+/* --- Gallery grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  aspect-ratio: 4/3;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Gastronomy card --- */
+.gastro-card {
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: border-color var(--transition-base);
+}
+
+.gastro-card:hover {
+  border-color: var(--color-accent);
+}
+
+/* --- Animations (Keyframes) --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Scroll animation classes --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll.slide-left {
+  transform: translateX(30px);
+}
+
+.animate-on-scroll.slide-left.is-visible {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.scale-in {
+  transform: scale(0.95);
+}
+
+.animate-on-scroll.scale-in.is-visible {
+  transform: scale(1);
+}
+
+/* Staggered children */
+.stagger-children > .animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.stagger-children > .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.stagger-children > .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.stagger-children > .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+.stagger-children > .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
+.stagger-children > .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
+
+/* --- Image placeholder (when images not loaded) --- */
+.img-placeholder {
+  background: linear-gradient(135deg, var(--color-primary), #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* --- Back to top button --- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-base), background var(--transition-base);
+  cursor: pointer;
+  z-index: 40;
+  border: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--color-accent-hover);
+}
+
+/* --- Hamburger menu --- */
+.hamburger span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--color-text);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- Mobile menu --- */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.mobile-menu.open {
+  max-height: 400px;
+}
+
+/* --- Differentiator list --- */
+.diff-item::before {
+  content: '▹';
+  color: var(--color-accent);
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* --- Focus styles (a11y) --- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* --- Lang toggle button --- */
+.lang-toggle {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 9999px;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  background: transparent;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.lang-toggle:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* --- Promo section --- */
+.promo-section {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-soft));
+  border-radius: 1rem;
+}
+
+/* --- Tags --- */
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}

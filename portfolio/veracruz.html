@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veracruz - Puerto de Historia</title>
+  <meta name="description" content="Descubre Veracruz: su cultura, gastronomía y lugares emblemáticos.">
+  <meta name="author" content="OJoshuaCG">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Veracruz - Puerto de Historia">
+  <meta property="og:description" content="Descubre Veracruz: su cultura, gastronomía y lugares emblemáticos.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/images/veracruz/veracruz-hero.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            dark: { DEFAULT: '#0a0a0a', section: '#111111' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/icons/favicon.ico" type="image/x-icon">
+</head>
+<body data-page="veracruz" class="bg-[#0a0a0a] text-[#e0e0e0] font-sans">
+
+  <!-- Skip to content (a11y) -->
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+  <!-- Navbar -->
+  <nav data-section="navbar" class="navbar-glass fixed top-0 left-0 right-0 z-50" role="navigation" aria-label="Main navigation"></nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section data-section="hero" id="hero" class="relative overflow-hidden"></section>
+
+    <!-- Culture -->
+    <section data-section="culture" id="culture" class="section-alt"></section>
+
+    <!-- Gastronomy -->
+    <section data-section="gastronomy" id="gastronomy"></section>
+
+    <!-- Landmarks -->
+    <section data-section="landmarks" id="landmarks" class="section-alt"></section>
+
+    <!-- Gallery -->
+    <section data-section="gallery" id="gallery"></section>
+
+    <!-- Promo -->
+    <section data-section="promo" id="promo" class="section-alt"></section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer data-section="footer" class="border-t border-gray-800"></footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="./assets/js/utils.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+  <script src="./assets/js/renderer.js"></script>
+  <script src="./assets/js/animations.js"></script>
+  <script src="./assets/js/navigation.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
