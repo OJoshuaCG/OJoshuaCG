@@ -18,7 +18,7 @@
       "ariaLabel": { "es": "Cambiar a inglés", "en": "Switch to Spanish" }
     },
     "footer": {
-      "text": { "es": "Hecho con pasión por", "en": "Made with passion by" },
+      "text": { "es": "Hecho por", "en": "Made by" },
       "rights": { "es": "Todos los derechos reservados.", "en": "All rights reserved." }
     },
     "backToTop": { "es": "Volver arriba", "en": "Back to top" },
@@ -26,7 +26,7 @@
   },
   "index": {
     "hero": {
-      "greeting": { "es": "Hola, soy", "en": "Hi, I'm" },
+      "greeting": { "es": "Hola!, soy", "en": "Hi!, I'm" },
       "name": "Joshua",
       "role": { "es": "Desarrollador Backend en Python", "en": "Python Backend Developer" },
       "subtitle": { "es": "Construyo APIs robustas, automatizo procesos y diseño arquitecturas escalables.", "en": "I build robust APIs, automate processes and design scalable architectures." },
@@ -39,7 +39,7 @@
       "title": { "es": "Sobre mí", "en": "About me" },
       "paragraphs": [
         {
-          "es": "Soy un desarrollador backend apasionado por Python, con experiencia en la creación de APIs de alto rendimiento utilizando FastAPI. Me especializo en automatización de tareas, manipulación de archivos y diseño de arquitecturas limpias.",
+          "es": "Soy un desarrollador backend con un gran cariño por Python, con experiencia en la creación de APIs de alto rendimiento utilizando FastAPI. Me especializo en automatización de tareas, manipulación de archivos y diseño de arquitecturas limpias.",
           "en": "I'm a backend developer passionate about Python, experienced in building high-performance APIs using FastAPI. I specialize in task automation, file manipulation and clean architecture design."
         },
         {
@@ -59,9 +59,17 @@
           "name": { "es": "Lenguajes", "en": "Languages" },
           "items": [
             { "name": "Python", "icon": "./assets/images/tech/python.svg" },
+            { "name": "PHP", "icon": "./assets/images/tech/php.svg" },
             { "name": "JavaScript", "icon": "./assets/images/tech/javascript.svg" },
-            { "name": "SQL", "icon": "./assets/images/tech/sql.svg" },
             { "name": "Bash", "icon": "./assets/images/tech/bash.svg" }
+          ]
+        },
+        {
+          "name": { "es": "Bases de Datos", "en": "Databases" },
+          "items": [
+            { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg" },
+            { "name": "Mariadb", "icon": "./assets/images/tech/mariadb.svg" },
+            { "name": "SQL Server", "icon": "./assets/images/tech/sqlserver.svg" }
           ]
         },
         {
@@ -70,15 +78,15 @@
             { "name": "FastAPI", "icon": "./assets/images/tech/fastapi.svg" },
             { "name": "Docker", "icon": "./assets/images/tech/docker.svg" },
             { "name": "Git", "icon": "./assets/images/tech/git.svg" },
-            { "name": "Linux", "icon": "./assets/images/tech/linux.svg" }
+            { "name": "cPanel", "icon": "./assets/images/tech/cPanel.svg" }
           ]
         },
         {
-          "name": { "es": "Bases de Datos", "en": "Databases" },
+          "name": { "es": "Linux", "en": "Linux" },
           "items": [
-            { "name": "PostgreSQL", "icon": "./assets/images/tech/postgresql.svg" },
-            { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg" },
-            { "name": "Redis", "icon": "./assets/images/tech/redis.svg" }
+            { "name": "Arch Linux", "icon": "./assets/images/tech/archlinux.svg" },
+            { "name": "Debian", "icon": "./assets/images/tech/debian.svg" },
+            { "name": "Rocky Linux", "icon": "./assets/images/tech/rockylinux.svg" }
           ]
         }
       ]
