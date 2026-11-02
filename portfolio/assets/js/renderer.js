@@ -12,12 +12,16 @@
 
   var r = function (obj) { return window.Portfolio.I18n.resolve(obj); };
 
+  /* Contact state: the address is only joined at runtime, never written in the markup as text */
+  var emailAddress = '';
+  var clockConfig = null;
+  var clockTimer = null;
+  var copyTimer = null;
+
   /* ---- SVG Icons ---- */
   var ICONS = {
-    email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>',
     linkedin: '<svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>',
     github: '<svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>',
-    devto: '<svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6v4.36h.58c.37 0 .65-.08.84-.23.2-.16.3-.46.3-.91v-2.07c0-.45-.1-.76-.3-.92zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-1.94.77H4.38V8.55h2.28c.87 0 1.46.2 1.9.79.44.58.41 1.12.41 2.78v.59c0 1.7.04 2.01-.41 2.59zm4.75-5.37H11.1v2.26h1.42v1.32H11.1v2.26h2.21v1.32H10.2c-.57 0-.87-.3-.87-.87V9.11c0-.57.3-.87.87-.87h3.11v1.69zm5.55 5.77c-.49.79-1.26 1.07-1.94.71-.51-.27-.7-.73-.84-1.32l-1.01-4.79h-.07l-1.01 4.79c-.13.59-.33 1.05-.84 1.32-.68.36-1.45.08-1.94-.71L8.32 8.55h1.74l1.66 5.71h.07l.96-5.71h1.67l.96 5.71h.07l1.66-5.71H18.85l-1.99 7.15z"/></svg>',
     arrow_up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M18 15l-6-6-6 6"/></svg>',
     location: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'
   };
@@ -168,17 +172,90 @@
         '<div class="grid md:grid-cols-2 gap-6 stagger-children">' + cards + '</div>' +
       '</div>';
   }
+  function clockState(clock) {
+    var now = new Date();
+    var locale = window.Portfolio.I18n.getLang() === 'en' ? 'en-US' : 'es-MX';
+    var time = new Intl.DateTimeFormat(locale, { timeZone: clock.timezone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(now);
+    var hour = Number(new Intl.DateTimeFormat('en-US', { timeZone: clock.timezone, hour: 'numeric', hourCycle: 'h23' }).format(now));
+    var mood = clock.moods['default'];
+    if (hour < 7) mood = clock.moods.night;
+    else if (hour < 9) mood = clock.moods.morning;
+    else if (hour >= 21) mood = clock.moods.late;
+    return { time: time, mood: r(mood) };
+  }
+
+  function updateClock() {
+    if (!clockConfig) return;
+    var state = clockState(clockConfig);
+    var timeEl = document.querySelector('[data-clock-time]');
+    var moodEl = document.querySelector('[data-clock-mood]');
+    if (timeEl) timeEl.textContent = state.time;
+    if (moodEl) moodEl.textContent = state.mood;
+  }
+
+  function fallbackCopy(done) {
+    var ta = document.createElement('textarea');
+    ta.value = emailAddress;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      if (document.execCommand('copy')) done();
+    } catch (e) { /* clipboard unavailable: the mailto button still works */ }
+    document.body.removeChild(ta);
+  }
+
+  function copyEmail(btn) {
+    var label = btn.querySelector('[data-copy-text]');
+    var done = function () {
+      label.textContent = btn.getAttribute('data-copied');
+      btn.classList.add('is-copied');
+      clearTimeout(copyTimer);
+      copyTimer = setTimeout(function () {
+        label.textContent = btn.getAttribute('data-label');
+        btn.classList.remove('is-copied');
+      }, 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(emailAddress).then(done, function () { fallbackCopy(done); });
+    } else {
+      fallbackCopy(done);
+    }
+  }
+
 
   function renderContact(data) {
     var el = document.querySelector('[data-section="contact"]');
+    emailAddress = data.email.user + '@' + data.email.domain;
+    clockConfig = data.clock;
+    var clock = clockState(data.clock);
     if (!el || !data) return;
     el.innerHTML =
-      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8">' +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">' +
         '<div class="max-w-2xl">' +
-          '<p class="section-eyebrow animate-on-scroll">05 · ' + r(data.title) + '</p>' +
-          '<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight animate-on-scroll">' + r(data.subtitle) + '</h2>' +
+          '<p class="section-eyebrow animate-on-scroll">' + r(data.title) + '</p>' +
+          '<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4 animate-on-scroll">' + r(data.subtitle) + '</h2>' +
+          '<p class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-gray-400 animate-on-scroll">' +
+            '<span class="flex items-center gap-2 text-gray-200"><span class="status-dot" aria-hidden="true"></span>' + r(data.availability) + '</span>' +
+            '<span aria-hidden="true">&middot;</span>' +
+            '<span><time data-clock-time class="text-gray-200">' + clock.time + '</time> ' + r(data.clock.label) + ' &mdash; <span data-clock-mood>' + clock.mood + '</span></span>' +
+          '</p>' +
         '</div>' +
-        '<a href="' + data.cta.url + '" class="btn-theme inline-block self-start md:self-auto px-7 py-4 font-semibold rounded-lg animate-on-scroll">' + data.cta.label + '</a>' +
+        '<div class="flex flex-wrap items-center gap-3 animate-on-scroll">' +
+          '<a href="mailto:' + emailAddress + '" class="btn-theme inline-flex items-center gap-2.5 px-7 py-3 min-h-[44px] font-semibold rounded-lg">' +
+            r(data.writeMe) +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>' +
+          '</a>' +
+          '<button type="button" class="btn-outline copy-btn inline-flex items-center gap-2.5 px-5 py-3 min-h-[44px] rounded-lg cursor-pointer" onclick="Portfolio.Renderer.copyEmail(this)" data-label="' + r(data.copyEmail) + '" data-copied="' + r(data.copied) + '">' +
+            '<span data-copy-text aria-live="polite">' + r(data.copyEmail) + '</span>' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
+          '</button>' +
+        '</div>' +
+
+    clearInterval(clockTimer);
+    clockTimer = setInterval(updateClock, 30000);
       '</div>';
   }
 
@@ -403,16 +480,15 @@
     for (var i = 0; i < links.length; i++) {
       var l = links[i];
       social +=
-        '<a href="' + l.url + '" class="social-link" aria-label="' + l.label + '"' +
-        (l.type === 'email' ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' +
+        '<a href="' + l.url + '" class="social-link" aria-label="' + l.label + ' (' + r(globalData.newTab) + ')" target="_blank" rel="noopener noreferrer">' +
           icon(l.type) +
         '</a>';
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-7 flex flex-col sm:flex-row items-center justify-between gap-4">' +
         '<p class="text-gray-500 text-sm text-center sm:text-left">' +
-          r(globalData.footer.text) + ' <span class="text-white font-semibold">' + globalData.siteName + '</span>' +
-          ' &middot; &copy; ' + year + ' ' + r(globalData.footer.rights) +
+          r(globalData.footer.text) + ' <span class="text-white font-semibold">' + globalData.footer.author + '</span>' +
+          ' &middot; &copy; ' + year +
         '</p>' +
         '<div class="flex items-center gap-2.5">' + social + '</div>' +
       '</div>';
@@ -453,6 +529,7 @@
   }
 
   window.Portfolio.Renderer = {
+    copyEmail: copyEmail,
     renderPage: renderPage,
     icon: icon
   };

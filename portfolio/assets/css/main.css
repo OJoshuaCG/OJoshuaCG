@@ -251,6 +251,31 @@ body {
   border-color: var(--color-accent);
 }
 
+/* --- Contact: availability dot and copy button --- */
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-accent);
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 currentColor; }
+  70%  { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot { animation: none; }
+}
+
+.copy-btn.is-copied {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
 /* --- Footer social links --- */
 .social-link {
   width: 2.75rem;

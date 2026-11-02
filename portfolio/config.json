@@ -19,16 +19,15 @@
     },
     "footer": {
       "text": { "es": "Hecho por", "en": "Made by" },
-      "rights": { "es": "Todos los derechos reservados.", "en": "All rights reserved." }
+      "author": "OJoshuaCG"
     },
     "backToTop": { "es": "Volver arriba", "en": "Back to top" },
     "backToPortfolio": { "es": "Volver al portafolio", "en": "Back to portfolio" },
     "viewProject": { "es": "Ver proyecto", "en": "View project" },
+    "newTab": { "es": "abre en otra pestaña", "en": "opens in a new tab" },
     "social": [
-      { "type": "email", "label": "Email", "url": "mailto:ojoshuacg@gmail.com" },
       { "type": "linkedin", "label": "LinkedIn", "url": "https://mx.linkedin.com/in/ojoshuacg" },
-      { "type": "github", "label": "GitHub", "url": "https://github.com/OJoshuaCG" },
-      { "type": "devto", "label": "Dev.to", "url": "https://dev.to/ojoshuacg" }
+      { "type": "github", "label": "GitHub", "url": "https://github.com/OJoshuaCG" }
     ]
   },
   "index": {
@@ -200,7 +199,21 @@
         "es": "¿Tienes un proyecto en mente o necesitas ayuda? ¡Escríbeme!",
         "en": "Have a project in mind or need help? Reach out!"
       },
-      "cta": { "label": "ojoshuacg@gmail.com", "url": "mailto:ojoshuacg@gmail.com" }
+      "email": { "user": "ojoshuacg", "domain": "gmail.com" },
+      "writeMe": { "es": "Escríbeme", "en": "Write me" },
+      "copyEmail": { "es": "Copiar email", "en": "Copy email" },
+      "copied": { "es": "Copiado", "en": "Copied" },
+      "availability": { "es": "Disponible para proyectos", "en": "Available for projects" },
+      "clock": {
+        "timezone": "America/Mexico_City",
+        "label": { "es": "en CDMX", "en": "in Mexico City" },
+        "moods": {
+          "default": { "es": "probablemente programando", "en": "probably coding" },
+          "night": { "es": "durmiendo, te respondo en la mañana", "en": "sleeping, I'll reply in the morning" },
+          "morning": { "es": "con el primer café", "en": "having my first coffee" },
+          "late": { "es": "fuera de horario, pero leo correos", "en": "off hours, but I read emails" }
+        }
+      }
     }
   },
   "tampico": {
