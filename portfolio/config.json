@@ -22,7 +22,14 @@
       "rights": { "es": "Todos los derechos reservados.", "en": "All rights reserved." }
     },
     "backToTop": { "es": "Volver arriba", "en": "Back to top" },
-    "backToPortfolio": { "es": "Volver al portafolio", "en": "Back to portfolio" }
+    "backToPortfolio": { "es": "Volver al portafolio", "en": "Back to portfolio" },
+    "viewProject": { "es": "Ver proyecto", "en": "View project" },
+    "social": [
+      { "type": "email", "label": "Email", "url": "mailto:ojoshuacg@gmail.com" },
+      { "type": "linkedin", "label": "LinkedIn", "url": "https://mx.linkedin.com/in/ojoshuacg" },
+      { "type": "github", "label": "GitHub", "url": "https://github.com/OJoshuaCG" },
+      { "type": "devto", "label": "Dev.to", "url": "https://dev.to/ojoshuacg" }
+    ]
   },
   "index": {
     "hero": {
@@ -32,11 +39,14 @@
       "subtitle": { "es": "Construyo APIs robustas, automatizo procesos y diseño arquitecturas escalables.", "en": "I build robust APIs, automate processes and design scalable architectures." },
       "cta": { "es": "Conoce mi trabajo", "en": "See my work" },
       "ctaLink": "#projects",
+      "ctaSecondary": { "es": "Contáctame", "en": "Get in touch" },
+      "ctaSecondaryLink": "#contact",
       "portrait": "./assets/images/hero/hero-portrait.webp",
       "bg": "./assets/images/hero/hero-bg.webp"
     },
     "about": {
       "title": { "es": "Sobre mí", "en": "About me" },
+      "headline": { "es": "Código limpio, con cariño por Python.", "en": "Clean code, with a soft spot for Python." },
       "paragraphs": [
         {
           "es": "Soy un desarrollador backend con un gran cariño por Python, con experiencia en la creación de APIs de alto rendimiento utilizando FastAPI. Me especializo en automatización de tareas, manipulación de archivos y diseño de arquitecturas limpias.",
@@ -54,48 +64,58 @@
     },
     "techStack": {
       "title": { "es": "Tecnologías", "en": "Tech Stack" },
+      "headline": { "es": "Mi stack", "en": "My stack" },
       "categories": [
         {
           "name": { "es": "Lenguajes", "en": "Languages" },
           "items": [
-            { "name": "Python", "icon": "./assets/images/tech/python.svg" },
-            { "name": "PHP", "icon": "./assets/images/tech/php.svg" },
-            { "name": "JavaScript", "icon": "./assets/images/tech/javascript.svg" },
-            { "name": "Bash", "icon": "./assets/images/tech/bash.svg" }
+            { "name": "Python", "icon": "./assets/images/tech/python.svg", "color": "#78dce8" },
+            { "name": "PHP", "icon": "./assets/images/tech/php.svg", "color": "#ab9df2" },
+            { "name": "JavaScript", "icon": "./assets/images/tech/javascript.svg", "color": "#ffd866" },
+            { "name": "Bash", "icon": "./assets/images/tech/bash.svg", "color": "#a9dc76" }
+          ]
+        },
+        {
+          "name": { "es": "Frameworks", "en": "Frameworks" },
+          "items": [
+            { "name": "FastAPI", "icon": "./assets/images/tech/fastapi.svg", "color": "#a9dc76" },
+            { "name": "Laravel", "icon": "./assets/images/tech/laravel.svg", "color": "#ff6188" }
           ]
         },
         {
           "name": { "es": "Bases de Datos", "en": "Databases" },
           "items": [
-            { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg" },
-            { "name": "Mariadb", "icon": "./assets/images/tech/mariadb.svg" },
-            { "name": "SQL Server", "icon": "./assets/images/tech/sqlserver.svg" }
+            { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg", "color": "#78dce8" },
+            { "name": "MariaDB", "icon": "./assets/images/tech/mariadb.svg", "color": "#fc9867" },
+            { "name": "SQL Server", "icon": "./assets/images/tech/sqlserver.svg", "color": "#ff6188" }
           ]
         },
         {
-          "name": { "es": "Frameworks y Herramientas", "en": "Frameworks & Tools" },
+          "name": { "es": "Herramientas", "en": "Tools" },
           "items": [
-            { "name": "FastAPI", "icon": "./assets/images/tech/fastapi.svg" },
-            { "name": "Docker", "icon": "./assets/images/tech/docker.svg" },
-            { "name": "Git", "icon": "./assets/images/tech/git.svg" },
-            { "name": "cPanel", "icon": "./assets/images/tech/cPanel.svg" }
+            { "name": "Docker", "icon": "./assets/images/tech/docker.svg", "color": "#78dce8" },
+            { "name": "Git", "icon": "./assets/images/tech/git.svg", "color": "#fc9867" },
+            { "name": "cPanel", "icon": "./assets/images/tech/cpanel.svg", "color": "#fc9867" },
+            { "name": "Dokploy", "icon": "./assets/images/tech/dokploy.svg", "color": "#ab9df2" },
+            { "name": "Redpanda", "icon": "./assets/images/tech/redpanda.svg", "color": "#ff6188" }
           ]
         },
         {
           "name": { "es": "Linux", "en": "Linux" },
           "items": [
-            { "name": "Arch Linux", "icon": "./assets/images/tech/archlinux.svg" },
-            { "name": "Debian", "icon": "./assets/images/tech/debian.svg" },
-            { "name": "Rocky Linux", "icon": "./assets/images/tech/rockylinux.svg" }
+            { "name": "Arch Linux", "icon": "./assets/images/tech/archlinux.svg", "color": "#78dce8" },
+            { "name": "Debian", "icon": "./assets/images/tech/debian.svg", "color": "#ff6188" },
+            { "name": "Rocky Linux", "icon": "./assets/images/tech/rockylinux.svg", "color": "#a9dc76" },
+            { "name": "Fedora", "icon": "./assets/images/tech/fedora.svg", "color": "#ab9df2" }
           ]
         }
       ]
     },
     "skills": {
       "title": { "es": "Habilidades", "en": "Skills" },
+      "headline": { "es": "Qué puedo hacer por tu proyecto", "en": "What I can do for your project" },
       "items": [
         {
-          "icon": "api",
           "title": { "es": "Desarrollo de APIs", "en": "API Development" },
           "description": {
             "es": "Diseño e implementación de APIs RESTful con FastAPI, documentación automática y validación de datos con Pydantic.",
@@ -103,7 +123,6 @@
           }
         },
         {
-          "icon": "automation",
           "title": { "es": "Automatización", "en": "Automation" },
           "description": {
             "es": "Scripts y pipelines para automatizar tareas repetitivas, procesamiento de archivos y flujos de trabajo.",
@@ -111,7 +130,6 @@
           }
         },
         {
-          "icon": "database",
           "title": { "es": "Bases de Datos", "en": "Databases" },
           "description": {
             "es": "Modelado de datos, consultas optimizadas, migraciones y gestión de bases de datos relacionales.",
@@ -119,7 +137,6 @@
           }
         },
         {
-          "icon": "devops",
           "title": { "es": "DevOps & SRE", "en": "DevOps & SRE" },
           "description": {
             "es": "Contenedores con Docker, CI/CD, monitoreo y nociones de infraestructura como código.",
@@ -183,12 +200,7 @@
         "es": "¿Tienes un proyecto en mente o necesitas ayuda? ¡Escríbeme!",
         "en": "Have a project in mind or need help? Reach out!"
       },
-      "links": [
-        { "type": "email", "label": "ojoshuacg@gmail.com", "url": "mailto:ojoshuacg@gmail.com" },
-        { "type": "linkedin", "label": "LinkedIn", "url": "https://mx.linkedin.com/in/ojoshuacg" },
-        { "type": "github", "label": "GitHub", "url": "https://github.com/OJoshuaCG" },
-        { "type": "devto", "label": "Dev.to", "url": "https://dev.to/ojoshuacg" }
-      ]
+      "cta": { "label": "ojoshuacg@gmail.com", "url": "mailto:ojoshuacg@gmail.com" }
     }
   },
   "tampico": {

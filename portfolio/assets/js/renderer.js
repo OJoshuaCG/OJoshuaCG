@@ -14,10 +14,6 @@
 
   /* ---- SVG Icons ---- */
   var ICONS = {
-    api: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
-    automation: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path d="M12 6V2m0 20v-4m6-6h4M2 12h4m13.07-5.07l2.83-2.83M2.1 21.9l2.83-2.83m14.14 0l2.83 2.83M2.1 2.1l2.83 2.83"/><circle cx="12" cy="12" r="4"/></svg>',
-    database: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg>',
-    devops: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
     email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>',
     linkedin: '<svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>',
     github: '<svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>',
@@ -32,38 +28,63 @@
 
   /* ---- Index Page Sections ---- */
 
+  function sectionHead(num, eyebrow, headline) {
+    return '<p class="section-eyebrow animate-on-scroll">0' + num + ' · ' + r(eyebrow) + '</p>' +
+      '<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-10 animate-on-scroll">' + r(headline) + '</h2>';
+  }
+
   function renderHero(data) {
     var el = document.querySelector('[data-section="hero"]');
     if (!el || !data) return;
     el.innerHTML =
-      '<div class="hero-gradient absolute inset-0"></div>' +
-      '<div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-8 min-h-[85vh] py-20">' +
+      '<div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-12 py-24 md:py-28">' +
         '<div class="flex-1 text-center md:text-left">' +
-          '<p class="text-theme text-lg mb-2 animate-on-scroll">' + r(data.greeting) + '</p>' +
-          '<h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 animate-on-scroll">' + data.name + '</h1>' +
-          '<p class="text-xl sm:text-2xl text-gray-300 mb-6 animate-on-scroll">' + r(data.role) + '</p>' +
-          '<p class="text-gray-400 max-w-lg mb-8 animate-on-scroll">' + r(data.subtitle) + '</p>' +
-          '<a href="' + data.ctaLink + '" class="btn-theme inline-block px-8 py-3 font-semibold rounded-lg animate-on-scroll">' + r(data.cta) + '</a>' +
+          '<p class="text-theme font-mono text-sm mb-4 animate-on-scroll">' + r(data.greeting) + '</p>' +
+          '<h1 class="text-6xl sm:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-none mb-6 animate-on-scroll">' + data.name + '</h1>' +
+          '<p class="text-xl sm:text-2xl font-medium text-gray-300 mb-5 animate-on-scroll">' + r(data.role) + '</p>' +
+          '<p class="text-gray-400 text-lg max-w-lg mx-auto md:mx-0 mb-8 animate-on-scroll">' + r(data.subtitle) + '</p>' +
+          '<div class="flex flex-wrap justify-center md:justify-start gap-3 animate-on-scroll">' +
+            '<a href="' + data.ctaLink + '" class="btn-theme inline-block px-7 py-3 font-semibold rounded-lg">' + r(data.cta) + '</a>' +
+            '<a href="' + data.ctaSecondaryLink + '" class="btn-outline inline-block px-7 py-3 font-medium rounded-lg">' + r(data.ctaSecondary) + '</a>' +
+          '</div>' +
         '</div>' +
-        '<div class="flex-shrink-0 animate-on-scroll scale-in">' +
-          '<div class="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-theme-soft img-placeholder">' +
+        '<div class="hero-portrait flex-shrink-0 w-full max-w-sm animate-on-scroll scale-in">' +
+          '<div class="img-placeholder w-full h-full">' +
             '<img src="' + data.portrait + '" alt="Joshua" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)">' +
           '</div>' +
         '</div>' +
       '</div>';
   }
 
-  function renderAbout(data) {
+  function renderAbout(data, diff) {
     var el = document.querySelector('[data-section="about"]');
     if (!el || !data) return;
     var paragraphs = '';
     for (var i = 0; i < data.paragraphs.length; i++) {
-      paragraphs += '<p class="text-gray-300 leading-relaxed mb-4 animate-on-scroll">' + r(data.paragraphs[i]) + '</p>';
+      paragraphs += '<p class="text-gray-300 text-lg leading-relaxed mb-5 animate-on-scroll">' + r(data.paragraphs[i]) + '</p>';
+    }
+    var diffCards = '';
+    if (diff) {
+      for (var d = 0; d < diff.items.length; d++) {
+        diffCards +=
+          '<li class="diff-card animate-on-scroll">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-theme flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' +
+            '<span>' + r(diff.items[d]) + '</span>' +
+          '</li>';
+      }
     }
     el.innerHTML =
-      '<div class="max-w-4xl mx-auto px-4 sm:px-6 py-20">' +
-        '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 animate-on-scroll">' + r(data.title) + '</h2>' +
-        paragraphs +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 grid lg:grid-cols-5 gap-14">' +
+        '<div class="lg:col-span-3">' +
+          sectionHead(1, data.title, data.headline) +
+          paragraphs +
+        '</div>' +
+        (diff
+          ? '<div class="lg:col-span-2">' +
+              '<h3 class="text-lg font-semibold text-white mb-4 animate-on-scroll">' + r(diff.title) + '</h3>' +
+              '<ul class="space-y-3.5 stagger-children">' + diffCards + '</ul>' +
+            '</div>'
+          : '') +
       '</div>';
   }
 
@@ -77,23 +98,23 @@
       for (var i = 0; i < cat.items.length; i++) {
         var tech = cat.items[i];
         items +=
-          '<div class="tech-card hover-border-theme flex flex-col items-center gap-3 p-5 rounded-xl border border-gray-800 animate-on-scroll">' +
-            '<div class="w-12 h-12 flex items-center justify-center">' +
-              '<img src="' + tech.icon + '" alt="' + tech.name + '" class="w-10 h-10 object-contain" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\\\'tech-card-fallback\\\'>' + tech.name.charAt(0) + '</div>\'">' +
-            '</div>' +
-            '<span class="text-sm font-medium text-gray-300">' + tech.name + '</span>' +
-          '</div>';
+          '<li class="tech-chip">' +
+            '<span class="tech-tile">' +
+              '<span class="tech-icon" aria-hidden="true" style="background-color:' + tech.color + ';-webkit-mask-image:url(' + tech.icon + ');mask-image:url(' + tech.icon + ')"></span>' +
+            '</span>' +
+            '<span>' + tech.name + '</span>' +
+          '</li>';
       }
       categories +=
-        '<div class="mb-10 animate-on-scroll">' +
-          '<h3 class="text-xl font-semibold text-theme mb-6">' + r(cat.name) + '</h3>' +
-          '<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 stagger-children">' + items + '</div>' +
+        '<div class="tech-group animate-on-scroll">' +
+          '<h3 class="tech-cat">' + r(cat.name) + '</h3>' +
+          '<ul class="flex flex-wrap gap-2.5">' + items + '</ul>' +
         '</div>';
     }
     el.innerHTML =
-      '<div class="max-w-5xl mx-auto px-4 sm:px-6 py-20">' +
-        '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-10 animate-on-scroll">' + r(data.title) + '</h2>' +
-        categories +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
+        sectionHead(2, data.title, data.headline) +
+        '<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">' + categories + '</div>' +
       '</div>';
   }
 
@@ -104,34 +125,20 @@
     for (var i = 0; i < data.items.length; i++) {
       var s = data.items[i];
       cards +=
-        '<div class="p-6 rounded-xl border border-gray-800 hover-border-theme animate-on-scroll">' +
-          '<div class="skill-icon mb-4">' + icon(s.icon) + '</div>' +
-          '<h3 class="text-lg font-semibold text-white mb-2">' + r(s.title) + '</h3>' +
+        '<div class="skill-card hover-border-theme animate-on-scroll">' +
+          '<span class="text-theme font-mono text-sm">0' + (i + 1) + '</span>' +
+          '<h3 class="text-xl font-semibold text-white mt-3 mb-3">' + r(s.title) + '</h3>' +
           '<p class="text-gray-400 text-sm leading-relaxed">' + r(s.description) + '</p>' +
         '</div>';
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
-        '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-10 animate-on-scroll">' + r(data.title) + '</h2>' +
-        '<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">' + cards + '</div>' +
+        sectionHead(3, data.title, data.headline) +
+        '<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">' + cards + '</div>' +
       '</div>';
   }
 
-  function renderDifferentiator(data) {
-    var el = document.querySelector('[data-section="differentiator"]');
-    if (!el || !data) return;
-    var items = '';
-    for (var i = 0; i < data.items.length; i++) {
-      items += '<li class="diff-item flex items-start text-gray-300 text-lg animate-on-scroll">' + r(data.items[i]) + '</li>';
-    }
-    el.innerHTML =
-      '<div class="max-w-4xl mx-auto px-4 sm:px-6 py-20">' +
-        '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 animate-on-scroll">' + r(data.title) + '</h2>' +
-        '<ul class="space-y-4 stagger-children">' + items + '</ul>' +
-      '</div>';
-  }
-
-  function renderProjects(data) {
+  function renderProjects(data, viewLabel) {
     var el = document.querySelector('[data-section="projects"]');
     if (!el || !data) return;
     var cards = '';
@@ -147,38 +154,31 @@
             '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)">' +
           '</div>' +
           '<div class="p-6">' +
-            '<h3 class="text-xl font-bold text-white mb-2">' + p.title + '</h3>' +
+            '<h3 class="text-2xl font-semibold text-white mb-2">' + p.title + '</h3>' +
             '<p class="text-gray-400 text-sm mb-4">' + r(p.description) + '</p>' +
-            '<div class="flex flex-wrap gap-2">' + tags + '</div>' +
+            '<div class="flex flex-wrap gap-2 mb-5">' + tags + '</div>' +
+            '<span class="text-theme font-semibold text-sm">' + r(viewLabel) + ' →</span>' +
           '</div>' +
         '</a>';
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
-        '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-2 animate-on-scroll">' + r(data.title) + '</h2>' +
-        '<p class="text-gray-400 mb-10 animate-on-scroll">' + r(data.subtitle) + '</p>' +
-        '<div class="grid md:grid-cols-2 gap-8 stagger-children">' + cards + '</div>' +
+        sectionHead(4, data.title, data.title) +
+        '<p class="text-gray-400 -mt-6 mb-10 animate-on-scroll">' + r(data.subtitle) + '</p>' +
+        '<div class="grid md:grid-cols-2 gap-6 stagger-children">' + cards + '</div>' +
       '</div>';
   }
 
   function renderContact(data) {
     var el = document.querySelector('[data-section="contact"]');
     if (!el || !data) return;
-    var links = '';
-    for (var i = 0; i < data.links.length; i++) {
-      var l = data.links[i];
-      links +=
-        '<a href="' + l.url + '" target="_blank" rel="noopener noreferrer" class="contact-link animate-on-scroll"' +
-        (l.type === 'email' ? '' : ' target="_blank"') + '>' +
-          '<span class="text-theme">' + icon(l.type) + '</span>' +
-          '<span class="text-gray-300">' + l.label + '</span>' +
-        '</a>';
-    }
     el.innerHTML =
-      '<div class="max-w-4xl mx-auto px-4 sm:px-6 py-20">' +
-        '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-2 animate-on-scroll">' + r(data.title) + '</h2>' +
-        '<p class="text-gray-400 mb-10 animate-on-scroll">' + r(data.subtitle) + '</p>' +
-        '<div class="grid sm:grid-cols-2 gap-4 stagger-children">' + links + '</div>' +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8">' +
+        '<div class="max-w-2xl">' +
+          '<p class="section-eyebrow animate-on-scroll">05 · ' + r(data.title) + '</p>' +
+          '<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight animate-on-scroll">' + r(data.subtitle) + '</h2>' +
+        '</div>' +
+        '<a href="' + data.cta.url + '" class="btn-theme inline-block self-start md:self-auto px-7 py-4 font-semibold rounded-lg animate-on-scroll">' + data.cta.label + '</a>' +
       '</div>';
   }
 
@@ -373,7 +373,7 @@
 
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">' +
-        '<a href="./index.html" class="text-xl font-bold text-white">' + globalData.siteName + '</a>' +
+        '<a href="./index.html" class="text-xl font-bold text-white tracking-tight">' + globalData.siteName.replace(' ', '<span class="text-theme">.</span>') + '</a>' +
         '<div class="hidden md:flex items-center gap-6">' +
           navItems +
           '<button class="lang-toggle" onclick="Portfolio.I18n.toggle()" aria-label="' + r(globalData.langToggle.ariaLabel) + '">' +
@@ -398,12 +398,23 @@
     var el = document.querySelector('[data-section="footer"]');
     if (!el || !globalData) return;
     var year = new Date().getFullYear();
+    var social = '';
+    var links = globalData.social || [];
+    for (var i = 0; i < links.length; i++) {
+      var l = links[i];
+      social +=
+        '<a href="' + l.url + '" class="social-link" aria-label="' + l.label + '"' +
+        (l.type === 'email' ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' +
+          icon(l.type) +
+        '</a>';
+    }
     el.innerHTML =
-      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-center">' +
-        '<p class="text-gray-500 text-sm">' +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-7 flex flex-col sm:flex-row items-center justify-between gap-4">' +
+        '<p class="text-gray-500 text-sm text-center sm:text-left">' +
           r(globalData.footer.text) + ' <span class="text-white font-semibold">' + globalData.siteName + '</span>' +
+          ' &middot; &copy; ' + year + ' ' + r(globalData.footer.rights) +
         '</p>' +
-        '<p class="text-gray-600 text-xs mt-2">&copy; ' + year + ' ' + r(globalData.footer.rights) + '</p>' +
+        '<div class="flex items-center gap-2.5">' + social + '</div>' +
       '</div>';
   }
 
@@ -416,11 +427,10 @@
     if (page === 'index') {
       var d = config.index;
       renderHero(d.hero);
-      renderAbout(d.about);
+      renderAbout(d.about, d.differentiator);
       renderTechStack(d.techStack);
       renderSkills(d.skills);
-      renderDifferentiator(d.differentiator);
-      renderProjects(d.projects);
+      renderProjects(d.projects, globalData.viewProject);
       renderContact(d.contact);
     } else if (page === 'tampico') {
       var t = config.tampico;
