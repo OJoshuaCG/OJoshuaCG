@@ -32,8 +32,8 @@
 
   /* ---- Index Page Sections ---- */
 
-  function sectionHead(num, eyebrow, headline) {
-    return '<p class="section-eyebrow animate-on-scroll">0' + num + ' · ' + r(eyebrow) + '</p>' +
+  function sectionHead(eyebrow, headline) {
+    return '<p class="section-eyebrow animate-on-scroll">' + r(eyebrow) + '</p>' +
       '<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-10 animate-on-scroll">' + r(headline) + '</h2>';
   }
 
@@ -78,9 +78,9 @@
       }
     }
     el.innerHTML =
-      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 grid lg:grid-cols-5 gap-14">' +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 grid grid-cols-1 lg:grid-cols-5 gap-14">' +
         '<div class="lg:col-span-3">' +
-          sectionHead(1, data.title, data.headline) +
+          sectionHead(data.title, data.headline) +
           paragraphs +
         '</div>' +
         (diff
@@ -117,8 +117,8 @@
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
-        sectionHead(2, data.title, data.headline) +
-        '<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">' + categories + '</div>' +
+        sectionHead(data.title, data.headline) +
+        '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">' + categories + '</div>' +
       '</div>';
   }
 
@@ -130,15 +130,14 @@
       var s = data.items[i];
       cards +=
         '<div class="skill-card hover-border-theme animate-on-scroll">' +
-          '<span class="text-theme font-mono text-sm">0' + (i + 1) + '</span>' +
-          '<h3 class="text-xl font-semibold text-white mt-3 mb-3">' + r(s.title) + '</h3>' +
+          '<h3 class="text-xl font-semibold text-white mb-3">' + r(s.title) + '</h3>' +
           '<p class="text-gray-400 text-sm leading-relaxed">' + r(s.description) + '</p>' +
         '</div>';
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
-        sectionHead(3, data.title, data.headline) +
-        '<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">' + cards + '</div>' +
+        sectionHead(data.title, data.headline) +
+        '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">' + cards + '</div>' +
       '</div>';
   }
 
@@ -167,11 +166,12 @@
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
-        sectionHead(4, data.title, data.title) +
+        sectionHead(data.title, data.title) +
         '<p class="text-gray-400 -mt-6 mb-10 animate-on-scroll">' + r(data.subtitle) + '</p>' +
-        '<div class="grid md:grid-cols-2 gap-6 stagger-children">' + cards + '</div>' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">' + cards + '</div>' +
       '</div>';
   }
+
   function clockState(clock) {
     var now = new Date();
     var locale = window.Portfolio.I18n.getLang() === 'en' ? 'en-US' : 'es-MX';
@@ -225,13 +225,12 @@
     }
   }
 
-
   function renderContact(data) {
     var el = document.querySelector('[data-section="contact"]');
+    if (!el || !data) return;
     emailAddress = data.email.user + '@' + data.email.domain;
     clockConfig = data.clock;
     var clock = clockState(data.clock);
-    if (!el || !data) return;
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">' +
         '<div class="max-w-2xl">' +
@@ -253,10 +252,10 @@
             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
           '</button>' +
         '</div>' +
+      '</div>';
 
     clearInterval(clockTimer);
     clockTimer = setInterval(updateClock, 30000);
-      '</div>';
   }
 
   /* ---- City Page Sections ---- */
@@ -309,7 +308,7 @@
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
         '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-10 animate-on-scroll">' + r(data.title) + '</h2>' +
-        '<div class="grid md:grid-cols-3 gap-6 stagger-children">' + cards + '</div>' +
+        '<div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">' + cards + '</div>' +
       '</div>';
   }
 
@@ -322,7 +321,7 @@
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
-        '<div class="grid md:grid-cols-2 gap-10 items-center">' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">' +
           '<div>' +
             '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 animate-on-scroll">' + r(data.title) + '</h2>' +
             paragraphs +
@@ -350,7 +349,7 @@
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
         '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 animate-on-scroll">' + r(data.title) + '</h2>' +
         '<p class="text-gray-400 mb-10 animate-on-scroll">' + r(data.description) + '</p>' +
-        '<div class="grid sm:grid-cols-3 gap-6 stagger-children">' + items + '</div>' +
+        '<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 stagger-children">' + items + '</div>' +
       '</div>';
   }
 
@@ -374,7 +373,7 @@
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-20">' +
         '<h2 class="text-3xl sm:text-4xl font-bold text-white mb-10 animate-on-scroll">' + r(data.title) + '</h2>' +
-        '<div class="grid md:grid-cols-3 gap-6 stagger-children">' + cards + '</div>' +
+        '<div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">' + cards + '</div>' +
       '</div>';
   }
 
@@ -420,13 +419,13 @@
       var sectionIds = ['about', 'techStack', 'skills', 'projects', 'contact'];
       for (var i = 0; i < navKeys.length; i++) {
         navItems +=
-          '<a href="#' + sectionIds[i] + '" class="nav-link text-gray-300 hover:text-white transition-colors text-sm" data-nav="' + sectionIds[i] + '">' +
+          '<a href="#' + sectionIds[i] + '" class="nav-link text-gray-300 hover:text-white transition-colors text-sm py-2" data-nav="' + sectionIds[i] + '">' +
             r(globalData.nav[navKeys[i]]) +
           '</a>';
       }
     } else {
       navItems =
-        '<a href="./index.html" class="text-gray-300 hover:text-white transition-colors text-sm">' +
+        '<a href="./index.html" class="text-gray-300 hover:text-white transition-colors text-sm py-2">' +
           r(globalData.backToPortfolio) +
         '</a>';
     }
@@ -529,8 +528,8 @@
   }
 
   window.Portfolio.Renderer = {
-    copyEmail: copyEmail,
     renderPage: renderPage,
+    copyEmail: copyEmail,
     icon: icon
   };
 })();

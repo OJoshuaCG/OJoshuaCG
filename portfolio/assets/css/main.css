@@ -78,6 +78,8 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
+  /* Slide-in animations start translated off to the side; clip so they never add a horizontal scrollbar */
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -505,6 +507,8 @@ button:focus-visible {
 
 /* --- Lang toggle button --- */
 .lang-toggle {
+  min-width: 2.75rem;
+  min-height: 2.5rem;
   padding: 0.25rem 0.75rem;
   border: 1px solid var(--color-accent);
   border-radius: 9999px;
