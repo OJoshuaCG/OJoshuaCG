@@ -50,7 +50,7 @@
         "rows": [
           { "k": "role", "v": "Backend Developer · SRE" },
           { "k": "stack", "v": "Python · FastAPI · Docker" },
-          { "k": "data", "v": "MySQL · MariaDB · PostgreSQL" },
+          { "k": "data", "v": "MariaDB · MySQL · PostgreSQL" },
           { "k": "os", "v": "Linux (Fedora)" }
         ]
       }
@@ -64,8 +64,8 @@
           "en": "I'm a backend developer. I mostly work with Python and FastAPI, and also with PHP and TypeScript when the project calls for it. I handle the whole path: modeling the database, building the API and getting the service running in production."
         },
         {
-          "es": "En el último año he trabajado en sistemas multi-tenant, integraciones con WhatsApp, SMS y pagos, consumidores de Kafka y herramientas para administrar bases de datos MySQL, MariaDB y PostgreSQL. Intento que todo se pueda probar, desplegar con Docker y CI, y no dependa de que yo esté mirándolo. Mi entorno de trabajo es Linux, con Fedora.",
-          "en": "Over the past year I have worked on multi-tenant systems, integrations with WhatsApp, SMS and payments, Kafka consumers and tools to manage MySQL, MariaDB and PostgreSQL databases. I try to make everything testable, deployable with Docker and CI, and independent of me watching over it. My work environment is Linux, with Fedora."
+          "es": "En el último año he trabajado en sistemas multi-tenant, integraciones con WhatsApp, SMS y pagos, consumidores de Kafka y herramientas para administrar bases de datos MariaDB, MySQL y PostgreSQL. Intento que todo se pueda probar, desplegar con Docker y CI, y no dependa de que yo esté mirándolo. Mi entorno de trabajo es Linux, con Fedora.",
+          "en": "Over the past year I have worked on multi-tenant systems, integrations with WhatsApp, SMS and payments, Kafka consumers and tools to manage MariaDB, MySQL and PostgreSQL databases. I try to make everything testable, deployable with Docker and CI, and independent of me watching over it. My work environment is Linux, with Fedora."
         },
         {
           "es": "Cada día intento aprender algo nuevo y compartirlo: documento el porqué de mis decisiones y, cuando algo se repite, lo convierto en una plantilla pública. Si necesitas ayuda con un proyecto, escríbeme.",
@@ -97,10 +97,9 @@
         {
           "name": { "es": "Bases de Datos", "en": "Databases" },
           "items": [
-            { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg", "color": "#78dce8" },
             { "name": "MariaDB", "icon": "./assets/images/tech/mariadb.svg", "color": "#fc9867" },
-            { "name": "PostgreSQL", "icon": "./assets/images/tech/postgresql.svg", "color": "#ab9df2" },
-            { "name": "SQL Server", "icon": "./assets/images/tech/sqlserver.svg", "color": "#ff6188" }
+            { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg", "color": "#78dce8" },
+            { "name": "PostgreSQL", "icon": "./assets/images/tech/postgresql.svg", "color": "#ab9df2" }
           ]
         },
         {
