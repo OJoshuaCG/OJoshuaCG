@@ -17,7 +17,7 @@ Soy Joshua, **Backend Developer · SRE**. Construyo, automatizo y despliego. Lo 
 
 Soy desarrollador backend. Trabajo sobre todo con **[Python](https://www.python.org/)** y **[FastAPI](https://fastapi.tiangolo.com/)**, y también con **[PHP](https://www.php.net/)** y **TypeScript** cuando el proyecto lo pide. Me encargo de todo el camino: modelar la base de datos, construir la API y dejar el servicio corriendo en producción.
 
-En el último año he trabajado en sistemas multi-tenant, integraciones con WhatsApp, SMS y pagos, consumidores de Kafka y herramientas para administrar bases de datos MySQL, MariaDB y PostgreSQL. Intento que todo se pueda probar, desplegar con Docker y no dependa de que yo esté mirándolo. Mi entorno de trabajo es **Linux**, con Fedora.
+En el último año he trabajado en sistemas multi-tenant, integraciones con WhatsApp, SMS y pagos, consumidores de Kafka y herramientas para administrar bases de datos MariaDB, MySQL y PostgreSQL. Intento que todo se pueda probar, desplegar con Docker y no dependa de que yo esté mirándolo. Mi entorno de trabajo es **Linux**, con Fedora.
 
 Cada día intento aprender algo nuevo y compartirlo: documento el porqué de mis decisiones y, cuando algo se repite, lo convierto en una plantilla pública. Si necesitas ayuda con un proyecto, escríbeme.
 
