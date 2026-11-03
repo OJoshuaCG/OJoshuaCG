@@ -11,6 +11,7 @@
   --color-bg-section: #111111;
   --color-primary: #1a4a4b;
   --color-accent: #38a3a5;
+  --color-on-accent: #0a0a0a;
   --color-accent-hover: #2d8a8c;
   --color-accent-soft: rgba(56, 163, 165, 0.3);
   --color-accent-medium: rgba(56, 163, 165, 0.5);
@@ -30,6 +31,7 @@
 [data-page="tampico"] {
   --color-primary: #5c3a18;
   --color-accent: #d4943a;
+  --color-on-accent: #0a0a0a;
   --color-accent-hover: #b87d2f;
   --color-accent-soft: rgba(212, 148, 58, 0.3);
   --color-accent-medium: rgba(212, 148, 58, 0.5);
@@ -41,6 +43,7 @@
 [data-page="veracruz"] {
   --color-primary: #4a1510;
   --color-accent: #c0392b;
+  --color-on-accent: #ffffff;
   --color-accent-hover: #a33025;
   --color-accent-soft: rgba(192, 57, 43, 0.3);
   --color-accent-medium: rgba(192, 57, 43, 0.5);
@@ -57,7 +60,7 @@
 
 .btn-theme {
   background-color: var(--color-accent);
-  color: white;
+  color: var(--color-on-accent);
   transition: background-color var(--transition-base);
 }
 .btn-theme:hover {
@@ -97,7 +100,7 @@ body {
   z-index: 9999;
   padding: 0.75rem 1.5rem;
   background: var(--color-accent);
-  color: white;
+  color: var(--color-on-accent);
   border-radius: 0 0 0.5rem 0.5rem;
   font-weight: 600;
   transition: top var(--transition-base);
@@ -444,7 +447,7 @@ body {
   height: 3rem;
   border-radius: 50%;
   background: var(--color-accent);
-  color: white;
+  color: var(--color-on-accent);
   display: flex;
   align-items: center;
   justify-content: center;
