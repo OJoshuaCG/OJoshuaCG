@@ -2,7 +2,7 @@
 
 # Hola! 👋
 
-Estas en el perfil de Joshua, un **Desarrollador Backend** quien le gusta construir soluciones robustas y escalables.
+Soy Joshua, **Backend Developer · SRE**. Construyo, automatizo y despliego. Lo único emocionante debería ser el código.
 
 [![Portfolio](https://img.shields.io/badge/Mi_Portafolio-0a0a0a?style=for-the-badge&logo=githubpages&logoColor=white)](https://ojoshuacg.github.io/OJoshuaCG/portfolio/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ojoshuacg@gmail.com)
@@ -15,11 +15,11 @@ Estas en el perfil de Joshua, un **Desarrollador Backend** quien le gusta constr
 
 ### Sobre mí
 
-Hey! Que tal! Estas en el github de Joshua, un fanatico del Backend, con **[Python](https://www.python.org/)** y el framework **[FastAPI](https://fastapi.tiangolo.com/)**. Tambien le gusta trabajar con el elefante de **[PHP](https://www.php.net/)**. Se especializa en construir APIs de alto rendimiento, escalables, automatizar tareas, diseñar arquitecturas limpias y mantenibles.
+Soy desarrollador backend. Trabajo sobre todo con **[Python](https://www.python.org/)** y **[FastAPI](https://fastapi.tiangolo.com/)**, y también con **[PHP](https://www.php.net/)** y **TypeScript** cuando el proyecto lo pide. Me encargo de todo el camino: modelar la base de datos, construir la API y dejar el servicio corriendo en producción.
 
-Cuenta con conocimientos sólidos en bases de datos con el motor **[MariaDB](https://mariadb.org/)** ademas de tener un analisis critico en el diseño de interfaces. Su entorno preferido es **Linux**, especialmente los sabores de Arch Linux. Ha tenido experiencia en gestionar servidores Linux en la nube desde la instalacion del SO hasta el despliegue de aplicativos Web.
+En el último año he trabajado en sistemas multi-tenant, integraciones con WhatsApp, SMS y pagos, consumidores de Kafka y herramientas para administrar bases de datos MySQL, MariaDB y PostgreSQL. Intento que todo se pueda probar, desplegar con Docker y no dependa de que yo esté mirándolo. Mi entorno de trabajo es **Linux**, con Fedora.
 
-Cada día se esmera por cultivar su conocimiento y compartirlo con los colegas. Si necesitas un consejo o ayuda en algún proyecto, con gusto te puede colaborar y brindar el apoyo necesario.
+Cada día intento aprender algo nuevo y compartirlo: documento el porqué de mis decisiones y, cuando algo se repite, lo convierto en una plantilla pública. Si necesitas ayuda con un proyecto, escríbeme.
 
 ---
 
@@ -31,6 +31,7 @@ Cada día se esmera por cultivar su conocimiento y compartirlo con los colegas. 
 <p>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="50" height="50" style="padding: 0px 5px;"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/php/php-original.svg" alt="PHP" width="50" height="50" style="padding: 0px 5px;"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="50" height="50" style="padding: 0px 5px;"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="50" height="50" style="padding: 0px 5px;"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original.svg" alt="Bash" width="50" height="50" style="padding: 0px 5px;"/>
 </p>
@@ -40,24 +41,33 @@ Cada día se esmera por cultivar su conocimiento y compartirlo con los colegas. 
   <a href="https://fastapi.tiangolo.com/" title="FastAPI">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" alt="FastAPI" width="50" height="50" style="padding: 0px 5px;"/>
   </a>&nbsp;&nbsp;
+  <a href="https://laravel.com/" title="Laravel">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg" alt="Laravel" width="50" height="50" style="padding: 0px 5px;"/>
+  </a>&nbsp;&nbsp;
+  <a href="https://kafka.apache.org/" title="Apache Kafka">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apachekafka/apachekafka-original.svg" alt="Apache Kafka" width="50" height="50" style="padding: 0px 5px;"/>
+  </a>&nbsp;&nbsp;
   <a href="https://www.docker.com/" title="Docker">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" width="50" height="50" style="padding: 0px 5px;"/>
   </a>&nbsp;&nbsp;
   <a href="https://git-scm.com/" title="Git">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="50" height="50" style="padding: 0px 5px;"/>
   </a>&nbsp;&nbsp;
-  <a href="https://www.linux.org/" title="Linux">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux" width="50" height="50" style="padding: 0px 5px;"/>
+  <a href="https://fedoraproject.org/" title="Fedora">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fedora/fedora-original.svg" alt="Fedora" width="50" height="50" style="padding: 0px 5px;"/>
   </a>
 </p>
 
 #### Bases de Datos
 <p>
-  <a href="https://mariadb.com/docs" title="MySQL">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/mariadb/mariadb-original.svg" alt="MySQL" width="50" height="50"/>
+  <a href="https://mariadb.com/docs" title="MariaDB">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mariadb/mariadb-original.svg" alt="MariaDB" width="50" height="50" style=""/>
   </a>&nbsp;&nbsp;
-  <a href="https://redis.io/" title="SQL Server">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="SQL Server" width="50" height="50"/>
+  <a href="https://www.mysql.com/" title="MySQL">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" width="50" height="50" style=""/>
+  </a>&nbsp;&nbsp;
+  <a href="https://www.postgresql.org/" title="PostgreSQL">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="50" height="50" style=""/>
   </a>
 </p>
 
