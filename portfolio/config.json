@@ -34,8 +34,8 @@
     "hero": {
       "greeting": { "es": "Hola!, soy", "en": "Hi!, I'm" },
       "name": "Joshua",
-      "role": { "es": "Desarrollador Backend en Python", "en": "Python Backend Developer" },
-      "subtitle": { "es": "Construyo APIs robustas, automatizo procesos y diseño arquitecturas escalables.", "en": "I build robust APIs, automate processes and design scalable architectures." },
+      "role": { "es": "Backend Developer · SRE", "en": "Backend Developer · SRE" },
+      "subtitle": { "es": "Construyo, automatizo y despliego. Lo único emocionante debería ser el código.", "en": "I build, automate and deploy. The only exciting part should be the code." },
       "cta": { "es": "Conoce mi trabajo", "en": "See my work" },
       "ctaLink": "#projects",
       "ctaSecondary": { "es": "Contáctame", "en": "Get in touch" },
@@ -45,19 +45,19 @@
     },
     "about": {
       "title": { "es": "Sobre mí", "en": "About me" },
-      "headline": { "es": "Código limpio, con cariño por Python.", "en": "Clean code, with a soft spot for Python." },
+      "headline": { "es": "Construyo, despliego y mantengo.", "en": "I build, deploy and maintain." },
       "paragraphs": [
         {
-          "es": "Soy un desarrollador backend con un gran cariño por Python, con experiencia en la creación de APIs de alto rendimiento utilizando FastAPI. Me especializo en automatización de tareas, manipulación de archivos y diseño de arquitecturas limpias.",
-          "en": "I'm a backend developer passionate about Python, experienced in building high-performance APIs using FastAPI. I specialize in task automation, file manipulation and clean architecture design."
+          "es": "Soy desarrollador backend. Trabajo sobre todo con Python y FastAPI, y también con PHP y TypeScript cuando el proyecto lo pide. Me encargo de todo el camino: modelar la base de datos, construir la API y dejar el servicio corriendo en producción.",
+          "en": "I'm a backend developer. I mostly work with Python and FastAPI, and also with PHP and TypeScript when the project calls for it. I handle the whole path: modeling the database, building the API and getting the service running in production."
         },
         {
-          "es": "Tengo conocimientos sólidos en bases de datos, electrónica y diseño de interfaces (mockups). Mi entorno preferido es Linux, especialmente las distribuciones basadas en Arch Linux.",
-          "en": "I have solid knowledge in databases, electronics and interface design (mockups). My preferred environment is Linux, especially Arch Linux-based distributions."
+          "es": "En el último año he trabajado en sistemas multi-tenant, integraciones con WhatsApp, SMS y pagos, consumidores de Kafka y herramientas para administrar bases de datos MySQL, MariaDB y PostgreSQL. Intento que todo se pueda probar, desplegar con Docker y CI, y no dependa de que yo esté mirándolo. Mi entorno de trabajo es Linux, con Fedora.",
+          "en": "Over the past year I have worked on multi-tenant systems, integrations with WhatsApp, SMS and payments, Kafka consumers and tools to manage MySQL, MariaDB and PostgreSQL databases. I try to make everything testable, deployable with Docker and CI, and independent of me watching over it. My work environment is Linux, with Fedora."
         },
         {
-          "es": "Cada día me esfuerzo por aprender algo nuevo y compartir ese conocimiento con la comunidad. Si necesitas ayuda con algún proyecto, no dudes en contactarme.",
-          "en": "Every day I strive to learn something new and share that knowledge with the community. If you need help with a project, don't hesitate to reach out."
+          "es": "Cada día intento aprender algo nuevo y compartirlo: documento el porqué de mis decisiones y, cuando algo se repite, lo convierto en una plantilla pública. Si necesitas ayuda con un proyecto, escríbeme.",
+          "en": "Every day I try to learn something new and share it: I document the why behind my decisions and, when something repeats, I turn it into a public template. If you need help with a project, reach out."
         }
       ]
     },
@@ -136,10 +136,10 @@
           }
         },
         {
-          "title": { "es": "DevOps & SRE", "en": "DevOps & SRE" },
+          "title": { "es": "Despliegue y operación", "en": "Deployment & Operations" },
           "description": {
-            "es": "Contenedores con Docker, CI/CD, monitoreo y nociones de infraestructura como código.",
-            "en": "Containers with Docker, CI/CD, monitoring and infrastructure as code fundamentals."
+            "es": "Contenedores con Docker, despliegues automáticos y plantillas listas para producción, para que desplegar sea repetible.",
+            "en": "Docker containers, automated deployments and production-ready templates, so shipping is repeatable."
           }
         }
       ]
