@@ -36,7 +36,25 @@
       '<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-10 animate-on-scroll">' + r(headline) + '</h2>';
   }
 
-  function renderHero(data) {
+  function renderHeroProfile(profile, contact) {
+    if (!profile) return '';
+    var rows = '';
+    for (var i = 0; i < profile.rows.length; i++) {
+      rows += '<div class="hero-card-row"><dt>' + profile.rows[i].k + '</dt><dd>' + r(profile.rows[i].v) + '</dd></div>';
+    }
+    if (contact) {
+      var asleep = clockState(contact.clock).asleep;
+      rows +=
+        '<div class="hero-card-row"><dt>' + profile.statusKey + '</dt>' +
+          '<dd class="flex items-center gap-2"><span class="status-dot' + (asleep ? ' is-away' : '') + '" data-status-dot aria-hidden="true"></span>' + r(contact.availability) + '</dd></div>';
+    }
+    return '<div class="hero-card w-full max-w-md animate-on-scroll scale-in" role="group" aria-label="' + r(profile.label) + '">' +
+      '<div class="hero-card-bar" aria-hidden="true"><span></span><span></span><span></span><b>' + profile.title + '</b></div>' +
+      '<dl class="hero-card-body">' + rows + '</dl>' +
+    '</div>';
+  }
+
+  function renderHero(data, contact) {
     var el = document.querySelector('[data-section="hero"]');
     if (!el || !data) return;
     el.innerHTML =
@@ -51,11 +69,7 @@
             '<a href="' + data.ctaSecondaryLink + '" class="btn-outline inline-block px-7 py-3 font-medium rounded-lg">' + r(data.ctaSecondary) + '</a>' +
           '</div>' +
         '</div>' +
-        '<div class="hero-portrait flex-shrink-0 w-full max-w-sm animate-on-scroll scale-in">' +
-          '<div class="img-placeholder w-full h-full">' +
-            '<img src="' + data.portrait + '" alt="Joshua" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)">' +
-          '</div>' +
-        '</div>' +
+        renderHeroProfile(data.profile, contact) +
       '</div>';
   }
 
@@ -157,15 +171,17 @@
       var hasActions = !!(p.demo && p.code);
       var linkAttrs = external ? ' target="_blank" rel="noopener noreferrer" aria-label="' + p.title + ' (' + r(newTabLabel) + ')"' : '';
       var media = p.thumbnail
-        ? '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)">'
-        : '<div class="img-placeholder w-full h-full" role="img" aria-label="' + p.title + '"><span>' + p.title + '</span></div>';
+        ? '<div class="aspect-video img-placeholder"><img src="' + p.thumbnail + '" alt="' + p.title + '" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)"></div>'
+        : '';
+      var kind = p.kind ? '<p class="font-mono text-sm text-theme mb-2">' + r(p.kind) + '</p>' : '';
       if (hasActions) {
         var actionAttrs = ' target="_blank" rel="noopener noreferrer"';
         var actionClass = ' inline-flex items-center px-5 py-3 min-h-[44px] font-semibold rounded-lg';
         cards +=
           '<article class="project-card project-card-actions md:col-span-2 md:grid md:grid-cols-2 animate-on-scroll">' +
-            '<div class="aspect-video md:aspect-auto md:min-h-[18rem] img-placeholder">' + media + '</div>' +
+            media.replace('aspect-video img-placeholder', 'aspect-video md:aspect-auto md:min-h-[18rem] img-placeholder') +
             '<div class="p-6 md:p-10 flex flex-col justify-center">' +
+              kind +
               '<h3 class="text-2xl font-semibold text-white mb-2">' + p.title + '</h3>' +
               '<p class="text-gray-400 text-sm mb-4">' + r(p.description) + '</p>' +
               '<div class="flex flex-wrap gap-2 mb-5">' + tags + '</div>' +
@@ -179,8 +195,9 @@
       }
       cards +=
         '<a href="' + p.link + '"' + linkAttrs + ' class="project-card block animate-on-scroll">' +
-          '<div class="aspect-video img-placeholder">' + media + '</div>' +
+          media +
           '<div class="p-6">' +
+            kind +
             '<h3 class="text-2xl font-semibold text-white mb-2">' + p.title + '</h3>' +
             '<p class="text-gray-400 text-sm mb-4">' + r(p.description) + '</p>' +
             '<div class="flex flex-wrap gap-2 mb-5">' + tags + '</div>' +
@@ -214,8 +231,9 @@
     var state = clockState(clockConfig);
     var timeEl = document.querySelector('[data-clock-time]');
     var moodEl = document.querySelector('[data-clock-mood]');
-    var dotEl = document.querySelector('[data-status-dot]');
-    if (dotEl) dotEl.classList.toggle('is-away', state.asleep);
+    document.querySelectorAll('[data-status-dot]').forEach(function (dot) {
+      dot.classList.toggle('is-away', state.asleep);
+    });
     if (timeEl) timeEl.textContent = state.time;
     if (moodEl) moodEl.textContent = state.mood;
   }
@@ -451,12 +469,12 @@
           '<button class="lang-toggle" onclick="Portfolio.I18n.toggle()" aria-label="' + r(globalData.langToggle.ariaLabel) + '">' +
             r(globalData.langToggle.label) +
           '</button>' +
-          '<button class="hamburger flex flex-col gap-1.5 p-2" aria-label="Menu" aria-expanded="false">' +
+          '<button class="hamburger flex flex-col gap-1.5 p-2" aria-label="' + r(globalData.menu) + '" aria-expanded="false" aria-controls="mobile-menu">' +
             '<span></span><span></span><span></span>' +
           '</button>' +
         '</div>' +
       '</div>' +
-      '<div class="mobile-menu md:hidden px-4 pb-4">' +
+      '<div id="mobile-menu" class="mobile-menu md:hidden px-4">' +
         mobileItems +
       '</div>';
   }
@@ -476,7 +494,7 @@
     }
     el.innerHTML =
       '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-7 flex flex-col sm:flex-row items-center justify-between gap-4">' +
-        '<p class="text-gray-500 text-sm text-center sm:text-left">' +
+        '<p class="text-gray-400 text-sm text-center sm:text-left">' +
           r(globalData.footer.text) + ' <span class="text-white font-semibold">' + globalData.footer.author + '</span>' +
           ' &middot; &copy; ' + year +
         '</p>' +
@@ -488,11 +506,13 @@
 
   function renderPage(config, page) {
     var globalData = config.global;
+    var skip = document.querySelector('.skip-to-content');
+    if (skip) skip.textContent = r(globalData.skipToContent);
     renderNavbar(globalData, page);
 
     if (page === 'index') {
       var d = config.index;
-      renderHero(d.hero);
+      renderHero(d.hero, d.contact);
       renderAbout(d.about, d.differentiator);
       renderTechStack(d.techStack);
       renderSkills(d.skills);

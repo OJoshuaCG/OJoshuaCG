@@ -286,7 +286,79 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  /* Scroll reveals show their final state immediately */
+  .animate-on-scroll,
+  .animate-on-scroll.slide-left,
+  .animate-on-scroll.scale-in {
+    opacity: 1;
+    transform: none;
+  }
+
   .status-dot { animation: none; }
+}
+
+/* --- Hero profile card --- */
+.hero-card {
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  font-family: var(--font-mono);
+  overflow: hidden;
+}
+
+.hero-card-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-card-bar span {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: #374151;
+}
+
+.hero-card-bar b {
+  margin-left: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.hero-card-body {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.hero-card-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.hero-card-row dt { color: var(--color-accent); }
+.hero-card-row dd { margin: 0; color: var(--color-text); overflow-wrap: anywhere; }
+
+@media (max-width: 22rem) {
+  .hero-card-row { grid-template-columns: 1fr; gap: 0.125rem; }
 }
 
 /* --- Footer social links --- */
@@ -499,14 +571,19 @@ body {
 }
 
 /* --- Mobile menu --- */
+/* Collapsed: hidden from view and from the tab order, with no leftover padding peeking out */
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  visibility: hidden;
+  transition: max-height 0.4s ease, padding-bottom 0.4s ease, visibility 0s linear 0.4s;
 }
 
 .mobile-menu.open {
   max-height: 400px;
+  padding-bottom: 1rem;
+  visibility: visible;
+  transition: max-height 0.4s ease, padding-bottom 0.4s ease, visibility 0s;
 }
 
 /* --- Focus styles (a11y) --- */

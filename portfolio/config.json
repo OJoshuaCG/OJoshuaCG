@@ -19,12 +19,14 @@
     },
     "footer": {
       "text": { "es": "Hecho por", "en": "Made by" },
-      "author": "OJoshuaCG"
+      "author": "Joshua CG"
     },
     "backToTop": { "es": "Volver arriba", "en": "Back to top" },
     "backToPortfolio": { "es": "Volver al portafolio", "en": "Back to portfolio" },
     "viewProject": { "es": "Ver proyecto", "en": "View project" },
     "viewCode": { "es": "Ver código", "en": "View code" },
+    "menu": { "es": "Menú", "en": "Menu" },
+    "skipToContent": { "es": "Saltar al contenido", "en": "Skip to content" },
     "newTab": { "es": "abre en otra pestaña", "en": "opens in a new tab" },
     "social": [
       { "type": "linkedin", "label": "LinkedIn", "url": "https://mx.linkedin.com/in/ojoshuacg" },
@@ -41,8 +43,17 @@
       "ctaLink": "#projects",
       "ctaSecondary": { "es": "Contáctame", "en": "Get in touch" },
       "ctaSecondaryLink": "#contact",
-      "portrait": "./assets/images/hero/hero-portrait.webp",
-      "bg": "./assets/images/hero/hero-bg.webp"
+      "profile": {
+        "title": "whoami",
+        "label": { "es": "Perfil resumido", "en": "Profile summary" },
+        "statusKey": "status",
+        "rows": [
+          { "k": "role", "v": "Backend Developer · SRE" },
+          { "k": "stack", "v": "Python · FastAPI · Docker" },
+          { "k": "data", "v": "MySQL · MariaDB · PostgreSQL" },
+          { "k": "os", "v": "Linux (Fedora)" }
+        ]
+      }
     },
     "about": {
       "title": { "es": "Sobre mí", "en": "About me" },
@@ -71,6 +82,7 @@
           "items": [
             { "name": "Python", "icon": "./assets/images/tech/python.svg", "color": "#78dce8" },
             { "name": "PHP", "icon": "./assets/images/tech/php.svg", "color": "#ab9df2" },
+            { "name": "TypeScript", "icon": "./assets/images/tech/typescript.svg", "color": "#78dce8" },
             { "name": "JavaScript", "icon": "./assets/images/tech/javascript.svg", "color": "#ffd866" },
             { "name": "Bash", "icon": "./assets/images/tech/bash.svg", "color": "#a9dc76" }
           ]
@@ -87,6 +99,7 @@
           "items": [
             { "name": "MySQL", "icon": "./assets/images/tech/mysql.svg", "color": "#78dce8" },
             { "name": "MariaDB", "icon": "./assets/images/tech/mariadb.svg", "color": "#fc9867" },
+            { "name": "PostgreSQL", "icon": "./assets/images/tech/postgresql.svg", "color": "#ab9df2" },
             { "name": "SQL Server", "icon": "./assets/images/tech/sqlserver.svg", "color": "#ff6188" }
           ]
         },
@@ -161,8 +174,8 @@
           "en": "Ability to quickly learn new technologies"
         },
         {
-          "es": "Experiencia combinando backend con diseño de interfaces",
-          "en": "Experience combining backend with interface design"
+          "es": "Experiencia llevando un servicio desde el modelo de datos hasta producción",
+          "en": "Experience taking a service from data model to production"
         }
       ]
     },
@@ -172,6 +185,7 @@
       "items": [
         {
           "id": "axispay",
+          "kind": { "es": "Proyecto", "en": "Project" },
           "title": "AxisPay",
           "description": {
             "es": "Orquestador multi-tenant de links de pago sobre Stripe Connect. Mira su landing promocional o explora el código.",
@@ -188,6 +202,7 @@
         },
         {
           "id": "fastapi-template",
+          "kind": { "es": "Plantilla", "en": "Template" },
           "title": "FastAPI Template",
           "description": {
             "es": "Plantilla lista para producción para empezar proyectos FastAPI sin partir de cero: gestión de paquetes con uv, logging centralizado y buenas prácticas integradas.",
@@ -202,6 +217,7 @@
         },
         {
           "id": "kafka-consumer-template",
+          "kind": { "es": "Plantilla", "en": "Template" },
           "title": "Kafka Consumer Template",
           "description": {
             "es": "Plantilla para consumers de Kafka/Redpanda en Python: un consumer por carpeta, handlers como funciones puras y pensada para ser testeable y operable.",
@@ -216,23 +232,23 @@
         },
         {
           "id": "tampico",
+          "kind": { "es": "Landing de práctica", "en": "Practice landing" },
           "title": "Tampico",
           "description": {
             "es": "Landing page turística para la ciudad de Tampico, Tamaulipas. Presenta su historia, atractivos y gastronomía.",
             "en": "Tourism landing page for the city of Tampico, Tamaulipas. Showcases its history, attractions and gastronomy."
           },
-          "thumbnail": "./assets/images/projects/tampico-thumb.webp",
           "link": "./tampico.html",
           "tags": ["HTML", "CSS", "JavaScript"]
         },
         {
           "id": "veracruz",
+          "kind": { "es": "Landing de práctica", "en": "Practice landing" },
           "title": "Veracruz",
           "description": {
             "es": "Landing page turística para el puerto de Veracruz. Destaca su cultura, gastronomía y lugares emblemáticos.",
             "en": "Tourism landing page for the port of Veracruz. Highlights its culture, gastronomy and iconic landmarks."
           },
-          "thumbnail": "./assets/images/projects/veracruz-thumb.webp",
           "link": "./veracruz.html",
           "tags": ["HTML", "CSS", "JavaScript"]
         }
