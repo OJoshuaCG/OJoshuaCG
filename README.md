@@ -81,6 +81,4 @@ Cada día intento aprender algo nuevo y compartirlo: documento el porqué de mis
 
 ![Top Langs](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=OJoshuaCG&show_icons=true&theme=ayu-mirage)
 
-![GitHub Stats](https://github-readme-stats-fast.vercel.app/api?username=ojoshuacg&show_icons=true&theme=ayu-mirage)
-
 </div>
