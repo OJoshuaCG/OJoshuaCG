@@ -16,7 +16,6 @@
   var emailAddress = '';
   var clockConfig = null;
   var clockTimer = null;
-  var copyTimer = null;
 
   /* ---- SVG Icons ---- */
   var ICONS = {
@@ -178,10 +177,11 @@
     var time = new Intl.DateTimeFormat(locale, { timeZone: clock.timezone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(now);
     var hour = Number(new Intl.DateTimeFormat('en-US', { timeZone: clock.timezone, hour: 'numeric', hourCycle: 'h23' }).format(now));
     var mood = clock.moods['default'];
+    var asleep = hour < 7;
     if (hour < 7) mood = clock.moods.night;
     else if (hour < 9) mood = clock.moods.morning;
     else if (hour >= 21) mood = clock.moods.late;
-    return { time: time, mood: r(mood) };
+    return { time: time, mood: r(mood), asleep: asleep };
   }
 
   function updateClock() {
@@ -189,40 +189,10 @@
     var state = clockState(clockConfig);
     var timeEl = document.querySelector('[data-clock-time]');
     var moodEl = document.querySelector('[data-clock-mood]');
+    var dotEl = document.querySelector('[data-status-dot]');
+    if (dotEl) dotEl.classList.toggle('is-away', state.asleep);
     if (timeEl) timeEl.textContent = state.time;
     if (moodEl) moodEl.textContent = state.mood;
-  }
-
-  function fallbackCopy(done) {
-    var ta = document.createElement('textarea');
-    ta.value = emailAddress;
-    ta.setAttribute('readonly', '');
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    try {
-      if (document.execCommand('copy')) done();
-    } catch (e) { /* clipboard unavailable: the mailto button still works */ }
-    document.body.removeChild(ta);
-  }
-
-  function copyEmail(btn) {
-    var label = btn.querySelector('[data-copy-text]');
-    var done = function () {
-      label.textContent = btn.getAttribute('data-copied');
-      btn.classList.add('is-copied');
-      clearTimeout(copyTimer);
-      copyTimer = setTimeout(function () {
-        label.textContent = btn.getAttribute('data-label');
-        btn.classList.remove('is-copied');
-      }, 2000);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(emailAddress).then(done, function () { fallbackCopy(done); });
-    } else {
-      fallbackCopy(done);
-    }
   }
 
   function renderContact(data) {
@@ -237,7 +207,7 @@
           '<p class="section-eyebrow animate-on-scroll">' + r(data.title) + '</p>' +
           '<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4 animate-on-scroll">' + r(data.subtitle) + '</h2>' +
           '<p class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-gray-400 animate-on-scroll">' +
-            '<span class="flex items-center gap-2 text-gray-200"><span class="status-dot" aria-hidden="true"></span>' + r(data.availability) + '</span>' +
+            '<span class="flex items-center gap-2 text-gray-200"><span class="status-dot' + (clock.asleep ? ' is-away' : '') + '" data-status-dot aria-hidden="true"></span>' + r(data.availability) + '</span>' +
             '<span aria-hidden="true">&middot;</span>' +
             '<span><time data-clock-time class="text-gray-200">' + clock.time + '</time> ' + r(data.clock.label) + ' &mdash; <span data-clock-mood>' + clock.mood + '</span></span>' +
           '</p>' +
@@ -247,10 +217,6 @@
             r(data.writeMe) +
             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>' +
           '</a>' +
-          '<button type="button" class="btn-outline copy-btn inline-flex items-center gap-2.5 px-5 py-3 min-h-[44px] rounded-lg cursor-pointer" onclick="Portfolio.Renderer.copyEmail(this)" data-label="' + r(data.copyEmail) + '" data-copied="' + r(data.copied) + '">' +
-            '<span data-copy-text aria-live="polite">' + r(data.copyEmail) + '</span>' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
-          '</button>' +
         '</div>' +
       '</div>';
 
@@ -529,7 +495,6 @@
 
   window.Portfolio.Renderer = {
     renderPage: renderPage,
-    copyEmail: copyEmail,
     icon: icon
   };
 })();

@@ -201,8 +201,6 @@
       },
       "email": { "user": "ojoshuacg", "domain": "gmail.com" },
       "writeMe": { "es": "Escríbeme", "en": "Write me" },
-      "copyEmail": { "es": "Copiar email", "en": "Copy email" },
-      "copied": { "es": "Copiado", "en": "Copied" },
       "availability": { "es": "Disponible para proyectos", "en": "Available for projects" },
       "clock": {
         "timezone": "America/Mexico_City",
