@@ -256,6 +256,13 @@ body {
   border-color: var(--color-accent);
 }
 
+/* Card with its own buttons is not a link as a whole: no lift on hover */
+.project-card-actions:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-border);
+}
+
 /* --- Contact: availability dot and copy button --- */
 .status-dot {
   width: 0.5rem;

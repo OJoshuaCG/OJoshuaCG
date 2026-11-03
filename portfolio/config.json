@@ -24,6 +24,7 @@
     "backToTop": { "es": "Volver arriba", "en": "Back to top" },
     "backToPortfolio": { "es": "Volver al portafolio", "en": "Back to portfolio" },
     "viewProject": { "es": "Ver proyecto", "en": "View project" },
+    "viewCode": { "es": "Ver código", "en": "View code" },
     "newTab": { "es": "abre en otra pestaña", "en": "opens in a new tab" },
     "social": [
       { "type": "linkedin", "label": "LinkedIn", "url": "https://mx.linkedin.com/in/ojoshuacg" },
@@ -167,8 +168,24 @@
     },
     "projects": {
       "title": { "es": "Proyectos", "en": "Projects" },
-      "subtitle": { "es": "Plantillas para arrancar proyectos backend y landings turísticas de práctica", "en": "Templates to kick off backend projects and tourism landing pages built as practice" },
+      "subtitle": { "es": "Un proyecto en desarrollo, plantillas backend y landings turísticas de práctica", "en": "A project in development, backend templates and tourism landing pages built as practice" },
       "items": [
+        {
+          "id": "axispay",
+          "title": "AxisPay",
+          "description": {
+            "es": "Orquestador multi-tenant de links de pago sobre Stripe Connect. Mira su landing promocional o explora el código.",
+            "en": "Multi-tenant payment-links orchestrator on Stripe Connect. See its promo landing or explore the code."
+          },
+          "thumbnail": "./assets/images/projects/axispay-thumb.webp",
+          "demo": "https://ojoshuacg.github.io/axispay/",
+          "code": "https://github.com/OJoshuaCG/axispay",
+          "tags": [
+            "PHP",
+            "Laravel",
+            "Stripe Connect"
+          ]
+        },
         {
           "id": "fastapi-template",
           "title": "FastAPI Template",

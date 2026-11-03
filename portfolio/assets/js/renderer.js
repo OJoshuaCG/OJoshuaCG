@@ -140,7 +140,10 @@
       '</div>';
   }
 
-  function renderProjects(data, viewLabel, newTabLabel) {
+  function renderProjects(data, globalData) {
+    var viewLabel = globalData.viewProject;
+    var codeLabel = globalData.viewCode;
+    var newTabLabel = globalData.newTab;
     var el = document.querySelector('[data-section="projects"]');
     if (!el || !data) return;
     var cards = '';
@@ -151,10 +154,29 @@
         tags += '<span class="tag">' + p.tags[t] + '</span>';
       }
       var external = /^https?:/.test(p.link);
+      var hasActions = !!(p.demo && p.code);
       var linkAttrs = external ? ' target="_blank" rel="noopener noreferrer" aria-label="' + p.title + ' (' + r(newTabLabel) + ')"' : '';
       var media = p.thumbnail
         ? '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)">'
         : '<div class="img-placeholder w-full h-full" role="img" aria-label="' + p.title + '"><span>' + p.title + '</span></div>';
+      if (hasActions) {
+        var actionAttrs = ' target="_blank" rel="noopener noreferrer"';
+        var actionClass = ' inline-flex items-center px-5 py-3 min-h-[44px] font-semibold rounded-lg';
+        cards +=
+          '<article class="project-card project-card-actions md:col-span-2 md:grid md:grid-cols-2 animate-on-scroll">' +
+            '<div class="aspect-video md:aspect-auto md:min-h-[18rem] img-placeholder">' + media + '</div>' +
+            '<div class="p-6 md:p-10 flex flex-col justify-center">' +
+              '<h3 class="text-2xl font-semibold text-white mb-2">' + p.title + '</h3>' +
+              '<p class="text-gray-400 text-sm mb-4">' + r(p.description) + '</p>' +
+              '<div class="flex flex-wrap gap-2 mb-5">' + tags + '</div>' +
+              '<div class="flex flex-wrap gap-3">' +
+                '<a href="' + p.demo + '"' + actionAttrs + ' class="btn-theme' + actionClass + '" aria-label="' + r(viewLabel) + ': ' + p.title + ' (' + r(newTabLabel) + ')">' + r(viewLabel) + '</a>' +
+                '<a href="' + p.code + '"' + actionAttrs + ' class="btn-outline' + actionClass + '" aria-label="' + r(codeLabel) + ': ' + p.title + ' (' + r(newTabLabel) + ')">' + r(codeLabel) + '</a>' +
+              '</div>' +
+            '</div>' +
+          '</article>';
+        continue;
+      }
       cards +=
         '<a href="' + p.link + '"' + linkAttrs + ' class="project-card block animate-on-scroll">' +
           '<div class="aspect-video img-placeholder">' + media + '</div>' +
@@ -474,7 +496,7 @@
       renderAbout(d.about, d.differentiator);
       renderTechStack(d.techStack);
       renderSkills(d.skills);
-      renderProjects(d.projects, globalData.viewProject, globalData.newTab);
+      renderProjects(d.projects, globalData);
       renderContact(d.contact);
     } else if (page === 'tampico') {
       var t = config.tampico;
