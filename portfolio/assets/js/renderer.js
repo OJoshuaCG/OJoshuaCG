@@ -140,7 +140,7 @@
       '</div>';
   }
 
-  function renderProjects(data, viewLabel) {
+  function renderProjects(data, viewLabel, newTabLabel) {
     var el = document.querySelector('[data-section="projects"]');
     if (!el || !data) return;
     var cards = '';
@@ -150,11 +150,14 @@
       for (var t = 0; t < p.tags.length; t++) {
         tags += '<span class="tag">' + p.tags[t] + '</span>';
       }
+      var external = /^https?:/.test(p.link);
+      var linkAttrs = external ? ' target="_blank" rel="noopener noreferrer" aria-label="' + p.title + ' (' + r(newTabLabel) + ')"' : '';
+      var media = p.thumbnail
+        ? '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)">'
+        : '<div class="img-placeholder w-full h-full" role="img" aria-label="' + p.title + '"><span>' + p.title + '</span></div>';
       cards +=
-        '<a href="' + p.link + '" class="project-card block animate-on-scroll">' +
-          '<div class="aspect-video img-placeholder">' +
-            '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="w-full h-full object-cover" onerror="Portfolio.Utils.handleImageError(this)">' +
-          '</div>' +
+        '<a href="' + p.link + '"' + linkAttrs + ' class="project-card block animate-on-scroll">' +
+          '<div class="aspect-video img-placeholder">' + media + '</div>' +
           '<div class="p-6">' +
             '<h3 class="text-2xl font-semibold text-white mb-2">' + p.title + '</h3>' +
             '<p class="text-gray-400 text-sm mb-4">' + r(p.description) + '</p>' +
@@ -471,7 +474,7 @@
       renderAbout(d.about, d.differentiator);
       renderTechStack(d.techStack);
       renderSkills(d.skills);
-      renderProjects(d.projects, globalData.viewProject);
+      renderProjects(d.projects, globalData.viewProject, globalData.newTab);
       renderContact(d.contact);
     } else if (page === 'tampico') {
       var t = config.tampico;

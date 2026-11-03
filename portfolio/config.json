@@ -167,8 +167,36 @@
     },
     "projects": {
       "title": { "es": "Proyectos", "en": "Projects" },
-      "subtitle": { "es": "Landings turísticas construidas como proyectos de práctica", "en": "Tourism landing pages built as practice projects" },
+      "subtitle": { "es": "Plantillas para arrancar proyectos backend y landings turísticas de práctica", "en": "Templates to kick off backend projects and tourism landing pages built as practice" },
       "items": [
+        {
+          "id": "fastapi-template",
+          "title": "FastAPI Template",
+          "description": {
+            "es": "Plantilla lista para producción para empezar proyectos FastAPI sin partir de cero: gestión de paquetes con uv, logging centralizado y buenas prácticas integradas.",
+            "en": "Production-ready FastAPI template to start projects without building from scratch: uv package management, centralized logging and built-in best practices."
+          },
+          "link": "https://github.com/OJoshuaCG/fastapi-template",
+          "tags": [
+            "Python",
+            "FastAPI",
+            "Docker"
+          ]
+        },
+        {
+          "id": "kafka-consumer-template",
+          "title": "Kafka Consumer Template",
+          "description": {
+            "es": "Plantilla para consumers de Kafka/Redpanda en Python: un consumer por carpeta, handlers como funciones puras y pensada para ser testeable y operable.",
+            "en": "Template for Kafka/Redpanda consumers in Python: one consumer per folder, pure-function handlers, built to be testable and operable."
+          },
+          "link": "https://github.com/OJoshuaCG/kafka-consumer-template",
+          "tags": [
+            "Python",
+            "Kafka",
+            "Docker"
+          ]
+        },
         {
           "id": "tampico",
           "title": "Tampico",
