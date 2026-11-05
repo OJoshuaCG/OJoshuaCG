@@ -23,6 +23,15 @@ Cada día intento aprender algo nuevo y compartirlo: documento el porqué de mis
 
 ---
 
+### Proyectos destacados
+
+- **[Compass](https://ojoshuacg.github.io/compass/)** ([código](https://github.com/OJoshuaCG/compass)): plataforma interna de identidad, accesos y bóveda. Gestiona quién entra a qué y comparte cuentas externas con segundo factor, con un registro de auditoría a prueba de manipulación.
+- **[AxisPay](https://ojoshuacg.github.io/axispay/)** ([código](https://github.com/OJoshuaCG/axispay)): orquestador multi-tenant de links de pago sobre Stripe Connect, con API pública, checkout propio y paneles por tenant.
+
+Ambos siguen en desarrollo. Puedes ver más en mi [portafolio](https://ojoshuacg.github.io/OJoshuaCG/portfolio/).
+
+---
+
 ### Stack Tecnológico
 
 <div align="center">
