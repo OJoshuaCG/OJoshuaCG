@@ -180,8 +180,26 @@
     },
     "projects": {
       "title": { "es": "Proyectos", "en": "Projects" },
-      "subtitle": { "es": "Un proyecto en desarrollo, plantillas backend y landings turísticas de práctica", "en": "A project in development, backend templates and tourism landing pages built as practice" },
+      "subtitle": { "es": "Dos proyectos en desarrollo, plantillas backend y landings turísticas de práctica", "en": "Two projects in development, backend templates and tourism landing pages built as practice" },
       "items": [
+        {
+          "id": "compass",
+          "kind": { "es": "Proyecto", "en": "Project" },
+          "title": "Compass",
+          "description": {
+            "es": "Plataforma interna de identidad, accesos y bóveda: gestiona quién entra a qué y comparte cuentas externas con segundo factor, con un registro de auditoría a prueba de manipulación. Mira su presentación o explora el código.",
+            "en": "Internal identity, access and vault platform: manages who can enter what and shares external accounts with two-factor codes, backed by a tamper-proof audit log. See its project page or explore the code."
+          },
+          "thumbnail": "./assets/images/projects/compass-thumb.webp",
+          "demo": "https://ojoshuacg.github.io/compass/",
+          "code": "https://github.com/OJoshuaCG/compass",
+          "tags": [
+            "TypeScript",
+            "Fastify",
+            "React",
+            "PostgreSQL"
+          ]
+        },
         {
           "id": "axispay",
           "kind": { "es": "Proyecto", "en": "Project" },
