@@ -418,6 +418,21 @@
 
   /* ---- Shared: Navbar & Footer ---- */
 
+  var GLOBE_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg>';
+
+  function langButton(globalData) {
+    return '<button class="lang-toggle" onclick="Portfolio.I18n.toggle()" aria-label="' + r(globalData.langToggle.ariaLabel) + '">' +
+      GLOBE_ICON + '<span>' + r(globalData.langToggle.label) + '</span>' +
+    '</button>';
+  }
+
+  function githubButton(globalData) {
+    var label = r(globalData.viewOnGithub);
+    return '<a class="github-btn" href="' + globalData.profileUrl + '" target="_blank" rel="noopener noreferrer" aria-label="' + label + ' (' + r(globalData.newTab) + ')">' +
+      icon('github') +
+    '</a>';
+  }
+
   function renderNavbar(globalData, page) {
     var el = document.querySelector('[data-section="navbar"]');
     if (!el || !globalData) return;
@@ -461,14 +476,12 @@
         '<a href="./index.html" class="text-xl font-bold text-white tracking-tight">' + globalData.siteName.replace(' ', '<span class="text-theme">.</span>') + '</a>' +
         '<div class="hidden md:flex items-center gap-6">' +
           navItems +
-          '<button class="lang-toggle" onclick="Portfolio.I18n.toggle()" aria-label="' + r(globalData.langToggle.ariaLabel) + '">' +
-            r(globalData.langToggle.label) +
-          '</button>' +
+          langButton(globalData) +
+          githubButton(globalData) +
         '</div>' +
-        '<div class="flex md:hidden items-center gap-4">' +
-          '<button class="lang-toggle" onclick="Portfolio.I18n.toggle()" aria-label="' + r(globalData.langToggle.ariaLabel) + '">' +
-            r(globalData.langToggle.label) +
-          '</button>' +
+        '<div class="flex md:hidden items-center gap-2">' +
+          langButton(globalData) +
+          githubButton(globalData) +
           '<button class="hamburger flex flex-col gap-1.5 p-2" aria-label="' + r(globalData.menu) + '" aria-expanded="false" aria-controls="mobile-menu">' +
             '<span></span><span></span><span></span>' +
           '</button>' +
@@ -483,22 +496,10 @@
     var el = document.querySelector('[data-section="footer"]');
     if (!el || !globalData) return;
     var year = new Date().getFullYear();
-    var social = '';
-    var links = globalData.social || [];
-    for (var i = 0; i < links.length; i++) {
-      var l = links[i];
-      social +=
-        '<a href="' + l.url + '" class="social-link" aria-label="' + l.label + ' (' + r(globalData.newTab) + ')" target="_blank" rel="noopener noreferrer">' +
-          icon(l.type) +
-        '</a>';
-    }
     el.innerHTML =
-      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-7 flex flex-col sm:flex-row items-center justify-between gap-4">' +
-        '<p class="text-gray-400 text-sm text-center sm:text-left">' +
-          r(globalData.footer.text) + ' <span class="text-white font-semibold">' + globalData.footer.author + '</span>' +
-          ' &middot; &copy; ' + year +
-        '</p>' +
-        '<div class="flex items-center gap-2.5">' + social + '</div>' +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-gray-400 text-sm">' +
+        '<span>&copy; ' + year + ' &middot; ' + r(globalData.footer.text) + ' <a href="' + globalData.portfolioUrl + '" rel="author" class="footer-link">' + globalData.footer.author + '</a></span>' +
+        '<a href="' + globalData.repoUrl + '" class="footer-link" target="_blank" rel="noopener noreferrer">' + r(globalData.footer.source) + '</a>' +
       '</div>';
   }
 
