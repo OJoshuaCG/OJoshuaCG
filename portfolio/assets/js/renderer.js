@@ -476,12 +476,12 @@
         '<a href="./index.html" class="text-xl font-bold text-white tracking-tight">' + globalData.siteName.replace(' ', '<span class="text-theme">.</span>') + '</a>' +
         '<div class="hidden md:flex items-center gap-6">' +
           navItems +
-          langButton(globalData) +
           githubButton(globalData) +
+          langButton(globalData) +
         '</div>' +
         '<div class="flex md:hidden items-center gap-2">' +
-          langButton(globalData) +
           githubButton(globalData) +
+          langButton(globalData) +
           '<button class="hamburger flex flex-col gap-1.5 p-2" aria-label="' + r(globalData.menu) + '" aria-expanded="false" aria-controls="mobile-menu">' +
             '<span></span><span></span><span></span>' +
           '</button>' +
