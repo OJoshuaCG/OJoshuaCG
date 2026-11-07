@@ -495,10 +495,8 @@
   function renderFooter(globalData) {
     var el = document.querySelector('[data-section="footer"]');
     if (!el || !globalData) return;
-    var year = new Date().getFullYear();
     el.innerHTML =
-      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-gray-400 text-sm">' +
-        '<span>&copy; ' + year + ' &middot; ' + r(globalData.footer.text) + ' <a href="' + globalData.portfolioUrl + '" rel="author" class="footer-link">' + globalData.footer.author + '</a></span>' +
+      '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex justify-center sm:justify-end text-gray-400 text-sm">' +
         '<a href="' + globalData.repoUrl + '" class="footer-link" target="_blank" rel="noopener noreferrer">' + r(globalData.footer.source) + '</a>' +
       '</div>';
   }

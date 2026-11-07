@@ -18,13 +18,10 @@
       "ariaLabel": { "es": "Cambiar a inglés", "en": "Switch to Spanish" }
     },
     "footer": {
-      "text": { "es": "Creado por", "en": "Created by" },
-      "author": "Joshua CG",
       "source": { "es": "Código fuente en GitHub", "en": "Source code on GitHub" }
     },
     "repoUrl": "https://github.com/OJoshuaCG/OJoshuaCG",
     "profileUrl": "https://github.com/OJoshuaCG",
-    "portfolioUrl": "https://ojoshuacg.github.io/OJoshuaCG/portfolio/",
     "viewOnGithub": { "es": "Ver en GitHub", "en": "View on GitHub" },
     "backToTop": { "es": "Volver arriba", "en": "Back to top" },
     "backToPortfolio": { "es": "Volver al portafolio", "en": "Back to portfolio" },
